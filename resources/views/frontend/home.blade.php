@@ -61,14 +61,14 @@
         <div class="hero-carousel position-relative">
             <div style="height:92vh; min-height:500px; overflow:hidden;">
                 <img src="{{ asset('images/slider-minoterie-moderne-saker-farine-de-ble-02-copie-3-qq4g6nbocpyf9lys4yjzo0fvoxwg94bbquyjrktbqw.jpg') }}"
-                     alt="Mimosa Flour" class="w-100 h-100" style="object-fit:cover; filter:brightness(0.5);">
+                     alt="Mimosa" class="w-100 h-100" style="object-fit:cover; filter:brightness(0.5);">
             </div>
             <div class="carousel-caption" style="bottom:50%; transform:translateY(50%); left:8%; right:8%; text-align:left;">
                 <h2 data-aos="fade-right" style="font-size:clamp(2rem,5vw,3.8rem); font-weight:800; text-shadow:2px 2px 8px rgba(0,0,0,.5);">
                     La Qualité au Cœur<br>de Notre Production
                 </h2>
                 <p data-aos="fade-right" data-aos-delay="200" style="font-size:1.2rem; max-width:600px;">
-                    Mimosa Flour – Leader de la production de farine de blé de qualité supérieure au Cameroun.
+                    Mimosa – Leader de la production de farine de blé de qualité supérieure au Cameroun.
                 </p>
                 <div data-aos="fade-up" data-aos-delay="400">
                     <a href="{{ route('products.index') }}" class="btn btn-primary-custom me-3">Découvrir nos produits</a>
@@ -110,7 +110,7 @@
             <div class="col-lg-6" data-aos="fade-right">
                 <div class="position-relative">
                     <img src="{{ asset('images/bf068541-d51e-4a93-a5b5-b3fc4a2f7b87.jfif') }}"
-                         alt="Usine Mimosa Flour"
+                         alt="Usine Mimosa"
                          class="img-fluid rounded"
                          style="box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
                     <div class="position-absolute" style="bottom:-30px; right:-20px; background:var(--secondary); padding:1.5rem 2rem; border-radius:6px;">
@@ -125,7 +125,7 @@
                     Excellence et Savoir-faire<br>au Service de la Qualité
                 </h2>
                 <p class="text-muted" style="line-height:2;">
-                    Fondée avec la vision de devenir le leader de la minoterie en Afrique centrale, <strong>Mimosa Flour</strong>
+                    Fondée avec la vision de devenir le leader de la minoterie en Afrique centrale, <strong>Mimosa</strong>
                     produit chaque jour des farines de blé de qualité supérieure destinées aux boulangeries, pâtisseries,
                     ménages et industries agroalimentaires de toute la République du Cameroun.
                 </p>
@@ -295,7 +295,7 @@
     <div class="container text-center text-white" data-aos="zoom-in">
         <h2 style="font-size:2.2rem; margin-bottom:1rem;">Vous cherchez un partenaire de confiance ?</h2>
         <p style="font-size:1.1rem; opacity:.85; max-width:600px; margin: 0 auto 2rem;">
-            Rejoignez les milliers de clients qui font confiance à Mimosa Flour pour leur approvisionnement en farine de qualité.
+            Rejoignez les milliers de clients qui font confiance à Mimosa pour leur approvisionnement en farine de qualité.
         </p>
         <a href="{{ route('contact') }}" class="btn btn-primary-custom">
             Contactez-nous <i class="bi bi-envelope-fill ms-2"></i>

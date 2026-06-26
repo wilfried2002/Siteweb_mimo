@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Role;
 use App\Models\Product;
 use App\Models\JobOffer;
 use App\Models\Slider;
@@ -25,6 +26,29 @@ class DatabaseSeeder extends Seeder
                 'is_admin' => true,
             ]
         );
+
+        // =====================================================
+        // EMPLOYÉS DE TEST (un par rôle)
+        // =====================================================
+        $roleMap = Role::pluck('id', 'name');
+
+        $employees = [
+            ['name' => 'Jean Commercial',   'email' => 'commercial@mimosaflour.com',  'role' => 'commercial'],
+            ['name' => 'Pierre Magasinier', 'email' => 'magasinier@mimosaflour.com',  'role' => 'magasinier'],
+            ['name' => 'Marie RH',          'email' => 'rh@mimosaflour.com',           'role' => 'rh'],
+        ];
+
+        foreach ($employees as $emp) {
+            User::updateOrCreate(
+                ['email' => $emp['email']],
+                [
+                    'name'     => $emp['name'],
+                    'password' => Hash::make('Employe@2024!'),
+                    'is_admin' => false,
+                    'role_id'  => $roleMap[$emp['role']] ?? null,
+                ]
+            );
+        }
 
         // =====================================================
         // SLIDERS (utilisent les images présentes dans public/images)

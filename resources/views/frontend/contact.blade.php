@@ -42,12 +42,18 @@
                     </div>
                 @endforeach
 
-                {{-- Carte fictive --}}
-                <div style="background:#e8f4f8; border-radius:10px; height:220px; display:flex; align-items:center; justify-content:center; margin-top:2rem;">
-                    <div class="text-center text-muted">
-                        <i class="bi bi-map" style="font-size:3rem; color:var(--primary);"></i>
-                        <p class="mt-2 mb-0 small">DOUALA, Zone d'Essengue</p>
-                    </div>
+                {{-- Carte de géolocalisation --}}
+                <div style="border-radius:10px; overflow:hidden; margin-top:2rem; box-shadow:0 4px 25px rgba(0,0,0,.08);">
+                    <iframe
+                        src="https://www.google.com/maps?q=Zone+Industrielle+Essengue,+Douala,+Cameroun&output=embed"
+                        width="100%"
+                        height="220"
+                        style="border:0; display:block;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Localisation Mimosa Flour - Douala, Zone d'Essengue">
+                    </iframe>
                 </div>
             </div>
 
@@ -66,7 +72,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label small fw-bold">Votre Email *</label>
-                                <input type="email" class="form-control" placeholder="jean@email.com" required>
+                                <input type="email" class="form-control" placeholder="ngankouwilfried@mimosaflour.com" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label small fw-bold">Téléphone</label>

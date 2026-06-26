@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Mimosa Flour - Leader de la production de farine au Cameroun. Farine de qualité supérieure pour professionnels et particuliers.">
-    <meta name="keywords" content="farine, minoterie, Mimosa Flour, Cameroun, Douala, blé, production farine">
-    <title>@yield('title', 'Mimosa Flour') - Qualité & Excellence</title>
+    <meta name="description" content="Mimosa  - Leader de la production de farine au Cameroun. Farine de qualité supérieure pour professionnels et particuliers.">
+    <meta name="keywords" content="farine, minoterie, Mimosa , Cameroun, Douala, blé, production farine">
+    <title>@yield('title', 'Mimosa ') - Qualité & Excellence</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Bootstrap 5 CSS (local) -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -413,7 +414,7 @@
 <nav class="navbar navbar-main navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}">
-            <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Mimosa Flour Logo">
+            <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Mimosa  Logo">
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -487,10 +488,10 @@
         <div class="row gy-4">
             <!-- Logo & About -->
             <div class="col-lg-4 col-md-6">
-                <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Mimosa Flour" height="70"
+                <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Mimosa" height="70"
                      class="mb-3 rounded">
                 <p class="small" style="color:rgba(255,255,255,0.65); line-height:1.8;">
-                    Mimosa Flour est un leader dans la production de farine de qualité supérieure au cameroun.
+                    Mimosa  est un leader dans la production de farine de qualité supérieure au cameroun.
                     Nous nous engageons à fournir des produits répondant aux standards internationaux.
                 </p>
                 <div class="social-links mt-3">
@@ -510,6 +511,8 @@
                     <li class="mb-2"><a href="{{ route('products.index') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Produits</a></li>
                     <li class="mb-2"><a href="{{ route('services') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Services</a></li>
                     <li class="mb-2"><a href="{{ route('careers.index') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Carrières</a></li>
+                    <li class="mb-2"><a href="{{ route('admin.login') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Administration</a></li>
+                    <li class="mb-2"><a href="{{ route('employee.login') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Espace Employés</a></li>
                 </ul>
             </div>
 
@@ -531,11 +534,11 @@
                 <ul class="list-unstyled">
                     <li class="mb-3 d-flex align-items-start">
                         <i class="bi bi-geo-alt-fill me-2 mt-1" style="color:var(--secondary);"></i>
-                        <span>Avenue Industrielle, Zone de Limete,<br>Douala, CAMEROUN</span>
+                        <span>Avenue Industrielle, Zone de Essengue,<br>Douala, CAMEROUN</span>
                     </li>
                     <li class="mb-2">
                         <i class="bi bi-telephone-fill me-2" style="color:var(--secondary);"></i>
-                        <a href="tel:+237620731930">+237 620 731 930</a>
+                        <a href="tel:+237620731930" >+237 620 731 930</a>
                     </li>
                     <li class="mb-2">
                         <i class="bi bi-envelope-fill me-2" style="color:var(--secondary);"></i>
@@ -552,7 +555,7 @@
 
     <div class="footer-bottom">
         <div class="container">
-            © {{ date('Y') }} <strong style="color:var(--secondary);">Mimosa Flour</strong>.
+            © {{ date('Y') }} <strong style="color:var(--secondary);">Mimosa</strong>.
             Tous droits réservés. — MIMOSA, CAMEROUN
         </div>
     </div>

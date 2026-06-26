@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>System Access Restricted</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
         :root{--bg:#0a0a0a;--surface:#120a0a;--border:#2a1010;--red:#cc2200;--orange:#cc5500;--text:#ccc;--muted:#555}

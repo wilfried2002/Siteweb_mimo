@@ -11,12 +11,14 @@ class JobApplication extends Model
 
     protected $fillable = [
         'job_offer_id',
+        'desired_position',
         'first_name',
         'last_name',
         'email',
         'phone',
         'cover_letter',
         'cv_path',
+        'lettre_path',
         'status',
     ];
 

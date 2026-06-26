@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>500 Internal Server Error</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
         :root{--bg:#fefefe;--border:#ddd;--red:#c0392b;--orange:#e67e22;--blue:#2980b9;--text:#222;--muted:#777;--code-bg:#f5f5f5}

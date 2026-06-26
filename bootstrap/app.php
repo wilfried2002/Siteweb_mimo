@@ -14,11 +14,17 @@ return Application::configure(basePath: dirname(__DIR__))
         // Middleware global : vérifie la disponibilité de l'application
         $middleware->append(\App\Http\Middleware\EnsureApplicationIsAvailable::class);
 
-        // Rediriger les visiteurs non authentifiés vers la page de connexion admin
-        $middleware->redirectGuestsTo(fn () => route('admin.login'));
+        // Rediriger selon le préfixe de l'URL demandée
+        $middleware->redirectGuestsTo(function (\Illuminate\Http\Request $request) {
+            if (str_starts_with($request->path(), 'espace/')) {
+                return route('employee.login');
+            }
+            return route('admin.login');
+        });
 
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
+            'role'  => \App\Http\Middleware\RoleMiddleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

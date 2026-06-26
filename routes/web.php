@@ -13,6 +13,12 @@ use App\Http\Controllers\Admin\JobOfferController;
 use App\Http\Controllers\Admin\ApplicationController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Employee\AuthController as EmployeeAuthController;
+use App\Http\Controllers\Commercial\OrderController as CommercialOrderController;
+use App\Http\Controllers\Magasinier\OrderController as MagasinierOrderController;
+use App\Http\Controllers\RH\ApplicationController as RHApplicationController;
+use App\Http\Controllers\RH\JobOfferController as RHJobOfferController;
 use App\Http\Controllers\System\SystemStatusController;
 
 // ============================================================
@@ -48,6 +54,7 @@ Route::get('/produits/{product}', [ProductController::class, 'show'])->name('pro
 Route::get('/carrieres', [CareerController::class, 'index'])->name('careers.index');
 Route::get('/carrieres/{jobOffer}', [CareerController::class, 'show'])->name('careers.show');
 Route::post('/carrieres/{jobOffer}/postuler', [CareerController::class, 'apply'])->name('careers.apply');
+Route::post('/carrieres/candidature-spontanee', [CareerController::class, 'applyOpen'])->name('careers.apply-open');
 
 // ──────────────────────────────────────────────────────────
 // PANIER (session-based)
@@ -127,5 +134,58 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::patch('/orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.status');
         Route::patch('/orders/{order}/notes', [AdminOrderController::class, 'updateNotes'])->name('orders.notes');
         Route::delete('/orders/{order}', [AdminOrderController::class, 'destroy'])->name('orders.destroy');
+
+        // Gestion des utilisateurs (Admin)
+        Route::resource('users', UserController::class)->except(['show'])
+             ->names([
+                 'index'   => 'users.index',
+                 'create'  => 'users.create',
+                 'store'   => 'users.store',
+                 'edit'    => 'users.edit',
+                 'update'  => 'users.update',
+                 'destroy' => 'users.destroy',
+             ]);
+    });
+});
+
+// ============================================================
+// ESPACE EMPLOYÉS — Authentification
+// ============================================================
+Route::prefix('espace')->name('employee.')->group(function () {
+    Route::get('/connexion', [EmployeeAuthController::class, 'showLogin'])->name('login');
+    Route::post('/connexion', [EmployeeAuthController::class, 'login']);
+    Route::post('/deconnexion', [EmployeeAuthController::class, 'logout'])->name('logout');
+
+    // ── Commercial ────────────────────────────────────────
+    Route::prefix('commercial')->name('commercial.')->middleware('role:commercial,admin')->group(function () {
+        Route::get('/commandes', [CommercialOrderController::class, 'index'])->name('orders.index');
+        Route::get('/commandes/{order}', [CommercialOrderController::class, 'show'])->name('orders.show');
+        Route::post('/commandes/{order}/valider', [CommercialOrderController::class, 'validate'])->name('orders.validate');
+        Route::post('/commandes/{order}/annuler', [CommercialOrderController::class, 'reject'])->name('orders.reject');
+        Route::patch('/commandes/{order}/notes', [CommercialOrderController::class, 'updateNotes'])->name('orders.notes');
+    });
+
+    // ── Magasinier ────────────────────────────────────────
+    Route::prefix('magasin')->name('magasinier.')->middleware('role:magasinier,admin')->group(function () {
+        Route::get('/commandes', [MagasinierOrderController::class, 'index'])->name('orders.index');
+        Route::get('/commandes/{order}', [MagasinierOrderController::class, 'show'])->name('orders.show');
+        Route::patch('/commandes/{order}/statut', [MagasinierOrderController::class, 'updateStatus'])->name('orders.status');
+    });
+
+    // ── RH ────────────────────────────────────────────────
+    Route::prefix('rh')->name('rh.')->middleware('role:rh,admin')->group(function () {
+        Route::get('/candidatures', [RHApplicationController::class, 'index'])->name('applications.index');
+        Route::get('/candidatures/{application}', [RHApplicationController::class, 'show'])->name('applications.show');
+        Route::patch('/candidatures/{application}/statut', [RHApplicationController::class, 'updateStatus'])->name('applications.status');
+        Route::get('/candidatures/{application}/cv', [RHApplicationController::class, 'downloadCv'])->name('applications.cv');
+        Route::get('/candidatures/{application}/lettre', [RHApplicationController::class, 'downloadLettre'])->name('applications.lettre');
+        Route::delete('/candidatures/{application}', [RHApplicationController::class, 'destroy'])->name('applications.destroy');
+
+        Route::get('/offres', [RHJobOfferController::class, 'index'])->name('jobs.index');
+        Route::get('/offres/creer', [RHJobOfferController::class, 'create'])->name('jobs.create');
+        Route::post('/offres', [RHJobOfferController::class, 'store'])->name('jobs.store');
+        Route::get('/offres/{job}/modifier', [RHJobOfferController::class, 'edit'])->name('jobs.edit');
+        Route::put('/offres/{job}', [RHJobOfferController::class, 'update'])->name('jobs.update');
+        Route::delete('/offres/{job}', [RHJobOfferController::class, 'destroy'])->name('jobs.destroy');
     });
 });

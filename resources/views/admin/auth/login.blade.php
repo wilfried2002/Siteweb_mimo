@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion Admin — Mimosa Flour</title>
+    <title>Connexion Admin — Mimosa </title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <!-- Bootstrap 5 (local) -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Bootstrap Icons (local) -->
@@ -89,7 +90,7 @@
 <body>
 <div class="login-card">
     <div class="logo">
-        <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Mimosa Flour">
+        <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Mimosa ">
     </div>
     <h2>Administration</h2>
     <p class="subtitle">Connectez-vous pour accéder au panneau de gestion</p>

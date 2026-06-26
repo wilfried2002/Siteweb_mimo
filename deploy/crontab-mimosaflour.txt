@@ -1,0 +1,8 @@
+# ============================================================
+# Tâche cron — Planificateur Laravel (Task Scheduling)
+# ============================================================
+# Installer avec : crontab -e -u www-data
+# puis ajouter la ligne ci-dessous (chemin à adapter).
+# ------------------------------------------------------------
+
+* * * * * cd /var/www/mimosaflour.com && php artisan schedule:run >> /dev/null 2>&1

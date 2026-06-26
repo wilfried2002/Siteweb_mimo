@@ -18,10 +18,12 @@ class Order extends Model
         'total',
         'status',
         'notes',
+        'delivery_date',
     ];
 
     protected $casts = [
-        'total' => 'decimal:2',
+        'total'         => 'decimal:2',
+        'delivery_date' => 'date',
     ];
 
     // ── Relations ──────────────────────────────────────────
@@ -36,10 +38,13 @@ class Order extends Model
     public function getStatusLabelAttribute(): string
     {
         return match ($this->status) {
-            'pending'   => 'En attente',
-            'validated' => 'Validée',
-            'cancelled' => 'Annulée',
-            default     => 'Inconnu',
+            'pending'        => 'En attente',
+            'validated'      => 'Validée',
+            'en_preparation' => 'En préparation',
+            'expediee'       => 'Expédiée',
+            'livree'         => 'Livrée',
+            'cancelled'      => 'Annulée',
+            default          => 'Inconnu',
         };
     }
 
@@ -47,10 +52,13 @@ class Order extends Model
     public function getStatusColorAttribute(): string
     {
         return match ($this->status) {
-            'pending'   => 'warning',
-            'validated' => 'success',
-            'cancelled' => 'danger',
-            default     => 'secondary',
+            'pending'        => 'warning',
+            'validated'      => 'primary',
+            'en_preparation' => 'info',
+            'expediee'       => 'indigo',
+            'livree'         => 'success',
+            'cancelled'      => 'danger',
+            default          => 'secondary',
         };
     }
 
@@ -58,10 +66,13 @@ class Order extends Model
     public function getStatusBgAttribute(): string
     {
         return match ($this->status) {
-            'pending'   => 'background:#fef3c7;color:#92400e',
-            'validated' => 'background:#d1fae5;color:#065f46',
-            'cancelled' => 'background:#fee2e2;color:#991b1b',
-            default     => 'background:#f1f5f9;color:#475569',
+            'pending'        => 'background:#fef3c7;color:#92400e',
+            'validated'      => 'background:#dbeafe;color:#1e40af',
+            'en_preparation' => 'background:#cffafe;color:#155e75',
+            'expediee'       => 'background:#ede9fe;color:#5b21b6',
+            'livree'         => 'background:#d1fae5;color:#065f46',
+            'cancelled'      => 'background:#fee2e2;color:#991b1b',
+            default          => 'background:#f1f5f9;color:#475569',
         };
     }
 

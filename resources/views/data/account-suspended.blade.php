@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Suspended</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
         body{background:#f4f4f4;font-family:Arial,Helvetica,sans-serif;min-height:100vh;display:flex;flex-direction:column}

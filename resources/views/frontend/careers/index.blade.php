@@ -5,7 +5,7 @@
 
 <section class="breadcrumb-section">
     <div class="container">
-        <h1>Carrières chez Mimosa Flour</h1>
+        <h1>Carrières chez Mimosa</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
@@ -22,10 +22,10 @@
             <div class="col-lg-6" data-aos="fade-right">
                 <span style="color:var(--secondary); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:3px; text-transform:uppercase;">Rejoignez notre équipe</span>
                 <h2 style="color:var(--primary); margin:1rem 0 1.5rem; font-size:2.2rem;">
-                    Construisez Votre Avenir<br>avec Mimosa Flour
+                    Construisez Votre Avenir<br>avec Mimosa
                 </h2>
                 <p class="text-muted" style="line-height:2;">
-                    Chez Mimosa Flour, nous croyons que nos collaborateurs sont notre plus grande richesse.
+                    Chez Mimosa, nous croyons que nos collaborateurs sont notre plus grande richesse.
                     Rejoindre notre équipe, c'est intégrer une entreprise dynamique, tournée vers l'innovation
                     et profondément engagée dans le développement du Cameroun.
                 </p>
@@ -47,7 +47,7 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <img src="{{ asset('images/bf068541-d51e-4a93-a5b5-b3fc4a2f7b87.jfif') }}"
-                     alt="Travailler chez Mimosa Flour"
+                     alt="Travailler chez Mimosa"
                      class="img-fluid rounded"
                      style="box-shadow: 0 15px 50px rgba(0,0,0,.12);">
             </div>

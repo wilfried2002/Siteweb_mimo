@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>503 Service Unavailable</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
         :root{--bg:#0d0d0d;--surface:#151515;--border:#222;--text:#bbb;--muted:#444;--red:#c0392b;--amber:#d68910}

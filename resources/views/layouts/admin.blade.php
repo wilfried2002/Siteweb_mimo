@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin | @yield('title', 'Dashboard') — Mimosa Flour</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
 
     <!-- Bootstrap 5 (local) -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -220,7 +221,7 @@
     <div class="sidebar-header d-flex align-items-center gap-3">
         <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Logo" class="rounded">
         <div>
-            <div class="site-name">Mimosa Flour</div>
+            <div class="site-name">Mimosa</div>
             <small>Administration</small>
         </div>
     </div>
@@ -266,6 +267,14 @@
                         {{ $pending }}
                     </span>
                 @endif
+            </a>
+        </li>
+
+        <li class="nav-section-title">Équipe</li>
+        <li class="nav-item">
+            <a class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}"
+               href="{{ route('admin.users.index') }}">
+                <i class="bi bi-people"></i> Utilisateurs
             </a>
         </li>
 

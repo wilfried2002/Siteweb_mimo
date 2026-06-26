@@ -108,7 +108,7 @@
                                 <input type="text" name="first_name"
                                        class="form-control @error('first_name') is-invalid @enderror"
                                        value="{{ old('first_name') }}"
-                                       placeholder="Jean" required>
+                                       placeholder="Loic" required>
                                 @error('first_name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -118,7 +118,7 @@
                                 <input type="text" name="last_name"
                                        class="form-control @error('last_name') is-invalid @enderror"
                                        value="{{ old('last_name') }}"
-                                       placeholder="Dupont" required>
+                                       placeholder="Wilfried" required>
                                 @error('last_name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -128,7 +128,7 @@
                                 <input type="email" name="email"
                                        class="form-control @error('email') is-invalid @enderror"
                                        value="{{ old('email') }}"
-                                       placeholder="jean.dupont@email.com" required>
+                                       placeholder="wilfried@email.com" required>
                                 @error('email')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -159,6 +159,21 @@
                                        class="form-control @error('cv') is-invalid @enderror"
                                        required>
                                 @error('cv')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                                <div class="form-text">
+                                    <i class="bi bi-info-circle me-1"></i>
+                                    Fichier PDF uniquement, taille maximale 5 Mo.
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-bold">
+                                    Lettre de motivation (PDF, facultatif)
+                                </label>
+                                <input type="file" name="lettre"
+                                       accept=".pdf"
+                                       class="form-control @error('lettre') is-invalid @enderror">
+                                @error('lettre')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                                 <div class="form-text">

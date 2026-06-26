@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maintenance en cours</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
     <style>
         *{box-sizing:border-box;margin:0;padding:0}
         :root{--primary:#1a3a5c;--gold:#c8a84b;--bg:#f8f5ef;--text:#1a2639;--muted:#64748b}

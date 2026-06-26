@@ -198,7 +198,7 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <img src="{{ asset('images/16d1942a-3411-4f6c-8f5a-c05abc430fb7 (1).jfif') }}"
-                     alt="Mimosa Flour Factory"
+                     alt="Mimosa Factory"
                      class="img-fluid rounded"
                      style="box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
             </div>
