@@ -32,16 +32,16 @@
                                         {{ $slide->button_text }}
                                     </a>
                                     <a href="{{ route('about') }}" class="btn btn-outline-custom">
-                                        En savoir plus
+                                        {{ __('En savoir plus') }}
                                     </a>
                                 </div>
                             @else
                                 <div data-aos="fade-up" data-aos-delay="400">
                                     <a href="{{ route('products.index') }}" class="btn btn-primary-custom me-3">
-                                        Nos Produits
+                                        {{ __('Nos Produits') }}
                                     </a>
                                     <a href="{{ route('contact') }}" class="btn btn-outline-custom">
-                                        Nous Contacter
+                                        {{ __('Nous Contacter') }}
                                     </a>
                                 </div>
                             @endif
@@ -65,14 +65,14 @@
             </div>
             <div class="carousel-caption" style="bottom:50%; transform:translateY(50%); left:8%; right:8%; text-align:left;">
                 <h2 data-aos="fade-right" style="font-size:clamp(2rem,5vw,3.8rem); font-weight:800; text-shadow:2px 2px 8px rgba(0,0,0,.5);">
-                    La Qualité au Cœur<br>de Notre Production
+                    {{ __('La Qualité au Cœur de Notre Production') }}
                 </h2>
                 <p data-aos="fade-right" data-aos-delay="200" style="font-size:1.2rem; max-width:600px;">
-                    Mimosa – Leader de la production de farine de blé de qualité supérieure au Cameroun.
+                    {{ __('Mimosa – Leader de la production de farine de blé de qualité supérieure au Cameroun.') }}
                 </p>
                 <div data-aos="fade-up" data-aos-delay="400">
-                    <a href="{{ route('products.index') }}" class="btn btn-primary-custom me-3">Découvrir nos produits</a>
-                    <a href="{{ route('about') }}" class="btn btn-outline-custom">À propos de nous</a>
+                    <a href="{{ route('products.index') }}" class="btn btn-primary-custom me-3">{{ __('Découvrir nos produits') }}</a>
+                    <a href="{{ route('about') }}" class="btn btn-outline-custom">{{ __('À propos de nous') }}</a>
                 </div>
             </div>
         </div>
@@ -85,19 +85,19 @@
         <div class="row text-center g-3">
             <div class="col-6 col-md-3">
                 <i class="bi bi-award-fill me-2" style="color:var(--dark);"></i>
-                <strong style="color:var(--dark); font-size:.9rem;">Qualité Certifiée</strong>
+                <strong style="color:var(--dark); font-size:.9rem;">{{ __('Qualité Certifiée') }}</strong>
             </div>
             <div class="col-6 col-md-3">
                 <i class="bi bi-truck me-2" style="color:var(--dark);"></i>
-                <strong style="color:var(--dark); font-size:.9rem;">Livraison Nationale</strong>
+                <strong style="color:var(--dark); font-size:.9rem;">{{ __('Livraison Nationale') }}</strong>
             </div>
             <div class="col-6 col-md-3">
                 <i class="bi bi-factory me-2" style="color:var(--dark);"></i>
-                <strong style="color:var(--dark); font-size:.9rem;">Production Locale</strong>
+                <strong style="color:var(--dark); font-size:.9rem;">{{ __('Production Locale') }}</strong>
             </div>
             <div class="col-6 col-md-3">
                 <i class="bi bi-shield-check-fill me-2" style="color:var(--dark);"></i>
-                <strong style="color:var(--dark); font-size:.9rem;">Normes Internationales</strong>
+                <strong style="color:var(--dark); font-size:.9rem;">{{ __('Normes Internationales') }}</strong>
             </div>
         </div>
     </div>
@@ -115,52 +115,49 @@
                          style="box-shadow: 0 20px 60px rgba(0,0,0,0.15);">
                     <div class="position-absolute" style="bottom:-30px; right:-20px; background:var(--secondary); padding:1.5rem 2rem; border-radius:6px;">
                         <div style="font-size:2.5rem; font-weight:800; color:var(--dark); font-family:'Montserrat',sans-serif; line-height:1;">15+</div>
-                        <div style="font-size:.8rem; color:var(--dark); font-weight:600; text-transform:uppercase; letter-spacing:1px;">Ans d'Expérience</div>
+                        <div style="font-size:.8rem; color:var(--dark); font-weight:600; text-transform:uppercase; letter-spacing:1px;">{{ __('Ans d\'Expérience') }}</div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
-                <span style="color:var(--secondary); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:3px; text-transform:uppercase;">À propos de nous</span>
+                <span style="color:var(--secondary); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:3px; text-transform:uppercase;">{{ __('À propos de nous') }}</span>
                 <h2 class="mt-2 mb-4" style="color:var(--primary); font-size:2.2rem;">
-                    Excellence et Savoir-faire<br>au Service de la Qualité
+                    {{ __('Excellence et Savoir-faire au Service de la Qualité') }}
                 </h2>
                 <p class="text-muted" style="line-height:2;">
-                    Fondée avec la vision de devenir le leader de la minoterie en Afrique centrale, <strong>Mimosa</strong>
-                    produit chaque jour des farines de blé de qualité supérieure destinées aux boulangeries, pâtisseries,
-                    ménages et industries agroalimentaires de toute la République du Cameroun.
+                    {{ __('Fondée avec la vision de devenir le leader de la minoterie en Afrique centrale, Mimosa produit chaque jour des farines de blé de qualité supérieure destinées aux boulangeries, pâtisseries, ménages et industries agroalimentaires de toute la République du Cameroun.') }}
                 </p>
                 <p class="text-muted" style="line-height:2;">
-                    Notre moulin moderne, équipé des dernières technologies européennes, garantit une farine homogène,
-                    nutritive et conforme aux normes internationales de sécurité alimentaire.
+                    {{ __('Notre moulin moderne, équipé des dernières technologies européennes, garantit une farine homogène, nutritive et conforme aux normes internationales de sécurité alimentaire.') }}
                 </p>
                 <div class="row g-3 mt-2">
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary); font-size:1.2rem;"></i>
-                            <span>Moulin de haute technologie</span>
+                            <span>{{ __('Moulin de haute technologie') }}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary); font-size:1.2rem;"></i>
-                            <span>Contrôle qualité rigoureux</span>
+                            <span>{{ __('Contrôle qualité rigoureux') }}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary); font-size:1.2rem;"></i>
-                            <span>Équipe expérimentée</span>
+                            <span>{{ __('Équipe expérimentée') }}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary); font-size:1.2rem;"></i>
-                            <span>Distribution nationale</span>
+                            <span>{{ __('Distribution nationale') }}</span>
                         </div>
                     </div>
                 </div>
                 <a href="{{ route('about') }}" class="btn btn-primary-custom mt-4">
-                    En savoir plus <i class="bi bi-arrow-right ms-2"></i>
+                    {{ __('En savoir plus') }} <i class="bi bi-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
@@ -174,25 +171,25 @@
             <div class="col-6 col-md-3" data-aos="fade-up">
                 <div class="stat-item">
                     <div class="number">500+</div>
-                    <div class="label">Tonnes / Jour</div>
+                    <div class="label">{{ __('Tonnes / Jour') }}</div>
                 </div>
             </div>
             <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="stat-item">
                     <div class="number">5000+</div>
-                    <div class="label">Clients Actifs</div>
+                    <div class="label">{{ __('Clients Actifs') }}</div>
                 </div>
             </div>
             <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
                 <div class="stat-item">
                     <div class="number">15+</div>
-                    <div class="label">Années d'Expérience</div>
+                    <div class="label">{{ __('Années d\'Expérience') }}</div>
                 </div>
             </div>
             <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
                 <div class="stat-item">
                     <div class="number">26</div>
-                    <div class="label">Provinces Desservies</div>
+                    <div class="label">{{ __('Provinces Desservies') }}</div>
                 </div>
             </div>
         </div>
@@ -203,8 +200,8 @@
 <section class="py-5 bg-light-custom">
     <div class="container" style="padding-top:2rem; padding-bottom:2rem;">
         <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Notre Gamme</span>
-            <h2>Nos Produits Phares</h2>
+            <span class="subtitle">{{ __('Notre Gamme') }}</span>
+            <h2>{{ __('Nos Produits Phares') }}</h2>
         </div>
         <div class="row g-4">
             @forelse($products as $product)
@@ -224,7 +221,7 @@
                             @endif
                             <a href="{{ route('products.show', $product) }}"
                                class="btn btn-primary-custom mt-3 w-100">
-                                Voir le produit
+                                {{ __('Voir le produit') }}
                             </a>
                         </div>
                     </div>
@@ -245,7 +242,7 @@
                                 <h5 class="card-title mt-2">{{ $p['name'] }}</h5>
                                 <p class="card-text text-muted small flex-grow-1">{{ $p['desc'] }}</p>
                                 <a href="{{ route('products.index') }}"
-                                   class="btn btn-primary-custom mt-3 w-100">Voir le produit</a>
+                                   class="btn btn-primary-custom mt-3 w-100">{{ __('Voir le produit') }}</a>
                             </div>
                         </div>
                     </div>
@@ -254,7 +251,7 @@
         </div>
         <div class="text-center mt-5" data-aos="fade-up">
             <a href="{{ route('products.index') }}" class="btn btn-primary-custom">
-                Voir tous nos produits <i class="bi bi-arrow-right ms-2"></i>
+                {{ __('Voir tous nos produits') }} <i class="bi bi-arrow-right ms-2"></i>
             </a>
         </div>
     </div>
@@ -264,8 +261,8 @@
 <section class="py-5" style="padding-top:4rem !important; padding-bottom:4rem !important;">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Ce que nous offrons</span>
-            <h2>Nos Services</h2>
+            <span class="subtitle">{{ __('Ce que nous offrons') }}</span>
+            <h2>{{ __('Nos Services') }}</h2>
         </div>
         <div class="row g-4">
             @foreach([
@@ -281,8 +278,8 @@
                         <div class="icon">
                             <i class="bi {{ $service['icon'] }}"></i>
                         </div>
-                        <h5 style="color:var(--primary); margin-bottom:.8rem;">{{ $service['title'] }}</h5>
-                        <p class="text-muted small mb-0">{{ $service['desc'] }}</p>
+                        <h5 style="color:var(--primary); margin-bottom:.8rem;">{{ __($service['title']) }}</h5>
+                        <p class="text-muted small mb-0">{{ __($service['desc']) }}</p>
                     </div>
                 </div>
             @endforeach
@@ -293,12 +290,12 @@
 {{-- ===== BANDEAU CTA ===== --}}
 <section style="background: linear-gradient(135deg, var(--primary) 0%, #2a5298 100%); padding: 5rem 0;">
     <div class="container text-center text-white" data-aos="zoom-in">
-        <h2 style="font-size:2.2rem; margin-bottom:1rem;">Vous cherchez un partenaire de confiance ?</h2>
+        <h2 style="font-size:2.2rem; margin-bottom:1rem;">{{ __('Vous cherchez un partenaire de confiance ?') }}</h2>
         <p style="font-size:1.1rem; opacity:.85; max-width:600px; margin: 0 auto 2rem;">
-            Rejoignez les milliers de clients qui font confiance à Mimosa pour leur approvisionnement en farine de qualité.
+            {{ __('Rejoignez les milliers de clients qui font confiance à Mimosa pour leur approvisionnement en farine de qualité.') }}
         </p>
         <a href="{{ route('contact') }}" class="btn btn-primary-custom">
-            Contactez-nous <i class="bi bi-envelope-fill ms-2"></i>
+            {{ __('Contactez-nous') }} <i class="bi bi-envelope-fill ms-2"></i>
         </a>
     </div>
 </section>
@@ -308,8 +305,8 @@
 <section class="py-5 bg-light-custom" style="padding-top:4rem !important;">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Rejoignez-nous</span>
-            <h2>Offres d'Emploi Récentes</h2>
+            <span class="subtitle">{{ __('Rejoignez-nous') }}</span>
+            <h2>{{ __('Offres d\'Emploi Récentes') }}</h2>
         </div>
         <div class="row">
             <div class="col-lg-8 mx-auto">
@@ -326,11 +323,11 @@
                             <div class="text-end">
                                 <div class="small text-muted mb-2">
                                     <i class="bi bi-calendar3 me-1"></i>
-                                    Clôture : {{ $job->deadline->format('d/m/Y') }}
+                                    {{ __('Clôture :') }} {{ $job->deadline->format('d/m/Y') }}
                                 </div>
                                 <a href="{{ route('careers.show', $job) }}"
                                    class="btn btn-primary-custom" style="padding:.5rem 1.2rem; font-size:.85rem;">
-                                    Postuler
+                                    {{ __('Postuler') }}
                                 </a>
                             </div>
                         </div>
@@ -338,7 +335,7 @@
                 @endforeach
                 <div class="text-center mt-4">
                     <a href="{{ route('careers.index') }}" class="btn btn-primary-custom">
-                        Toutes les offres <i class="bi bi-arrow-right ms-2"></i>
+                        {{ __('Toutes les offres') }} <i class="bi bi-arrow-right ms-2"></i>
                     </a>
                 </div>
             </div>
@@ -351,14 +348,14 @@
 <section class="py-5" style="padding:4rem 0;">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Inspirations Culinaires</span>
-            <h2>Faites avec notre Farine</h2>
+            <span class="subtitle">{{ __('Inspirations Culinaires') }}</span>
+            <h2>{{ __('Faites avec notre Farine') }}</h2>
         </div>
         <div class="row g-4">
             @foreach([
-                ['img'=>'Makala.jpg','name'=>'Makala','desc'=>'Beignets traditionnels moelleux et croustillants, à base de farine Mimosa Premium.'],
-                ['img'=>'Beignet saker.jpg','name'=>'Beignets Saker','desc'=>'Délicieux beignets frits, légers et savoureux, la recette préférée des ménages camerounais.'],
-                ['img'=>'prenium.jpg','name'=>'Pain Artisanal','desc'=>'Un pain doré à la croûte croustillante, fait avec la farine Mimosa Boulangerie.'],
+                ['img'=>'Makala.jpg','name'=>'Makala','desc'=>'Beignets traditionnels moelleux et croustillants, à base de farine Mimosa Premium.','desc_key'=>'Beignets traditionnels moelleux et croustillants, à base de farine Mimosa Premium.'],
+                ['img'=>'Beignet saker.jpg','name'=>'Beignets Saker','desc'=>'Délicieux beignets frits, légers et savoureux, la recette préférée des ménages camerounais.','desc_key'=>'Délicieux beignets frits, légers et savoureux, la recette préférée des ménages camerounais.'],
+                ['img'=>'prenium.jpg','name'=>'Pain Artisanal','desc'=>'Un pain doré à la croûte croustillante, fait avec la farine Mimosa Boulangerie.','desc_key'=>'Un pain doré à la croûte croustillante, fait avec la farine Mimosa Boulangerie.'],
             ] as $idx => $rec)
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="{{ $idx * 100 }}">
                     <div class="card border-0 rounded overflow-hidden"
@@ -373,7 +370,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="text-navy mb-1">{{ $rec['name'] }}</h5>
-                            <p class="text-muted small mb-0">{{ $rec['desc'] }}</p>
+                            <p class="text-muted small mb-0">{{ __($rec['desc']) }}</p>
                         </div>
                     </div>
                 </div>

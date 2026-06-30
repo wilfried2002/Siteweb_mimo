@@ -5,11 +5,11 @@
 
 <section class="breadcrumb-section">
     <div class="container">
-        <h1>Carrières chez Mimosa</h1>
+        <h1>{{ __('Carrières chez Mimosa') }}</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="breadcrumb-item active">Carrières</li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Accueil') }}</a></li>
+                <li class="breadcrumb-item active">{{ __('Carrières') }}</li>
             </ol>
         </nav>
     </div>
@@ -20,14 +20,12 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
-                <span style="color:var(--secondary); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:3px; text-transform:uppercase;">Rejoignez notre équipe</span>
+                <span style="color:var(--secondary); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:3px; text-transform:uppercase;">{{ __('Rejoignez notre équipe') }}</span>
                 <h2 style="color:var(--primary); margin:1rem 0 1.5rem; font-size:2.2rem;">
-                    Construisez Votre Avenir<br>avec Mimosa
+                    {{ __('Construisez Votre Avenir avec Mimosa') }}
                 </h2>
                 <p class="text-muted" style="line-height:2;">
-                    Chez Mimosa, nous croyons que nos collaborateurs sont notre plus grande richesse.
-                    Rejoindre notre équipe, c'est intégrer une entreprise dynamique, tournée vers l'innovation
-                    et profondément engagée dans le développement du Cameroun.
+                    {{ __('Chez Mimosa, nous croyons que nos collaborateurs sont notre plus grande richesse. Rejoindre notre équipe, c\'est intégrer une entreprise dynamique, tournée vers l\'innovation et profondément engagée dans le développement du Cameroun.') }}
                 </p>
                 <div class="row g-3 mt-2">
                     @foreach([
@@ -39,7 +37,7 @@
                         <div class="col-6">
                             <div class="d-flex align-items-center gap-2">
                                 <i class="bi {{ $avantage['icon'] }}" style="color:var(--secondary); font-size:1.1rem;"></i>
-                                <span class="small">{{ $avantage['text'] }}</span>
+                                <span class="small">{{ __($avantage['text']) }}</span>
                             </div>
                         </div>
                     @endforeach
@@ -59,8 +57,8 @@
 <section style="padding: 4rem 0; background: var(--light);">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Postes ouverts</span>
-            <h2>Offres d'Emploi Disponibles</h2>
+            <span class="subtitle">{{ __('Postes ouverts') }}</span>
+            <h2>{{ __('Offres d\'Emploi Disponibles') }}</h2>
         </div>
 
         @if($jobs->count() > 0)
@@ -78,7 +76,7 @@
                                         </span>
                                         <span class="text-muted small">
                                             <i class="bi bi-calendar3 me-1"></i>
-                                            Clôture : {{ $job->deadline->format('d/m/Y') }}
+                                            {{ __('Clôture :') }} {{ $job->deadline->format('d/m/Y') }}
                                         </span>
                                     </div>
                                     <p class="text-muted small mb-0">
@@ -88,7 +86,7 @@
                                 <div class="flex-shrink-0">
                                     <a href="{{ route('careers.show', $job) }}"
                                        class="btn btn-primary-custom">
-                                        Voir & Postuler <i class="bi bi-arrow-right ms-1"></i>
+                                        {{ __('Voir & Postuler') }} <i class="bi bi-arrow-right ms-1"></i>
                                     </a>
                                 </div>
                             </div>
@@ -100,13 +98,12 @@
             <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
                 <div style="background:#fff; padding:3rem; border-radius:10px; box-shadow:0 3px 20px rgba(0,0,0,.07);">
                     <i class="bi bi-briefcase" style="font-size:3rem; color:var(--secondary); display:block; margin-bottom:1rem;"></i>
-                    <h4 style="color:var(--primary);">Aucune offre disponible pour le moment</h4>
+                    <h4 style="color:var(--primary);">{{ __('Aucune offre disponible pour le moment') }}</h4>
                     <p class="text-muted mb-4">
-                        Nous n'avons pas d'offre d'emploi ouverte actuellement, mais nous recevons toujours
-                        les candidatures spontanées.
+                        {{ __('Nous n\'avons pas d\'offre d\'emploi ouverte actuellement, mais nous recevons toujours les candidatures spontanées.') }}
                     </p>
                     <a href="{{ route('contact') }}" class="btn btn-primary-custom">
-                        Envoyer une candidature spontanée
+                        {{ __('Envoyer une candidature spontanée') }}
                     </a>
                 </div>
             </div>

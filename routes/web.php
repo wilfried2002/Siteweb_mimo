@@ -20,6 +20,14 @@ use App\Http\Controllers\Magasinier\OrderController as MagasinierOrderController
 use App\Http\Controllers\RH\ApplicationController as RHApplicationController;
 use App\Http\Controllers\RH\JobOfferController as RHJobOfferController;
 use App\Http\Controllers\System\SystemStatusController;
+use App\Http\Controllers\LocaleController;
+
+// ============================================================
+// LANGUE — Basculement FR / EN
+// ============================================================
+Route::get('/langue/{lang}', [LocaleController::class, 'switch'])
+    ->name('locale.switch')
+    ->where('lang', 'fr|en');
 
 // ============================================================
 // SYSTEM — Gestion de la disponibilité (accès direct uniquement)

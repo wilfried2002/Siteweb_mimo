@@ -8,8 +8,8 @@
         <h1>{{ $product->name }}</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('products.index') }}">Produits</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Accueil') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('products.index') }}">{{ __('Produits') }}</a></li>
                 <li class="breadcrumb-item active">{{ $product->name }}</li>
             </ol>
         </nav>
@@ -48,32 +48,32 @@
                 @endif
 
                 <div style="border-top:1px solid #eee; border-bottom:1px solid #eee; padding:1.5rem 0; margin-bottom:1.5rem;">
-                    <p class="text-muted" style="line-height:2; margin:0;">{{ $product->description }}</p>
+                    <p class="text-muted" style="line-height:2; margin:0; white-space:pre-line;">{{ $product->description }}</p>
                 </div>
 
                 <div class="row g-3 mb-4">
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary);"></i>
-                            <span class="small">Qualité certifiée</span>
+                            <span class="small">{{ __('Qualité certifiée') }}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary);"></i>
-                            <span class="small">100% farine de blé</span>
+                            <span class="small">{{ __('100% farine de blé') }}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary);"></i>
-                            <span class="small">Sans additifs nocifs</span>
+                            <span class="small">{{ __('Sans additifs nocifs') }}</span>
                         </div>
                     </div>
                     <div class="col-6">
                         <div class="d-flex align-items-center">
                             <i class="bi bi-check-circle-fill me-2" style="color:var(--secondary);"></i>
-                            <span class="small">Livraison disponible</span>
+                            <span class="small">{{ __('Livraison disponible') }}</span>
                         </div>
                     </div>
                 </div>
@@ -81,13 +81,13 @@
                 <div class="d-flex gap-3 flex-wrap">
                     <button type="button" class="btn btn-primary-custom"
                             onclick="openCartModal({{ $product->id }}, '{{ addslashes($product->name) }}', {{ $product->price ?? 'null' }})">
-                        <i class="bi bi-cart-plus me-2"></i>Ajouter au panier
+                        <i class="bi bi-cart-plus me-2"></i>{{ __('Ajouter au panier') }}
                     </button>
                     <a href="{{ route('cart.index') }}" class="btn btn-outline-custom">
-                        <i class="bi bi-cart3 me-2"></i>Voir le panier
+                        <i class="bi bi-cart3 me-2"></i>{{ __('Voir le panier') }}
                     </a>
                     <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">
-                        <i class="bi bi-arrow-left me-2"></i>Retour
+                        <i class="bi bi-arrow-left me-2"></i>{{ __('Retour') }}
                     </a>
                 </div>
             </div>
@@ -97,8 +97,8 @@
         @if($related->count() > 0)
             <div class="mt-6" style="margin-top: 5rem;">
                 <div class="section-title">
-                    <span class="subtitle">De la même gamme</span>
-                    <h2>Produits Similaires</h2>
+                    <span class="subtitle">{{ __('De la même gamme') }}</span>
+                    <h2>{{ __('Produits Similaires') }}</h2>
                 </div>
                 <div class="row g-4">
                     @foreach($related as $rel)
@@ -113,7 +113,7 @@
                                     @endif
                                     <div class="d-flex gap-2 mt-3">
                                         <a href="{{ route('products.show', $rel) }}"
-                                           class="btn btn-outline-secondary btn-sm flex-grow-1">Voir</a>
+                                           class="btn btn-outline-secondary btn-sm flex-grow-1">{{ __('Voir') }}</a>
                                         <button type="button" class="btn btn-primary-custom btn-sm flex-grow-1"
                                                 onclick="openCartModal({{ $rel->id }}, '{{ addslashes($rel->name) }}', {{ $rel->price ?? 'null' }})">
                                             <i class="bi bi-cart-plus"></i>

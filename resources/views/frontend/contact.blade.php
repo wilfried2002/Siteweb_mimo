@@ -5,11 +5,11 @@
 
 <section class="breadcrumb-section">
     <div class="container">
-        <h1>Contactez-Nous</h1>
+        <h1>{{ __('Contactez-Nous') }}</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="breadcrumb-item active">Contact</li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Accueil') }}</a></li>
+                <li class="breadcrumb-item active">{{ __('Contact') }}</li>
             </ol>
         </nav>
     </div>
@@ -20,13 +20,13 @@
         <div class="row g-5">
             {{-- Informations contact --}}
             <div class="col-lg-5" data-aos="fade-right">
-                <h3 style="color:var(--primary); margin-bottom:2rem;">Nos Coordonnées</h3>
+                <h3 style="color:var(--primary); margin-bottom:2rem;">{{ __('Nos Coordonnées') }}</h3>
 
                 @foreach([
-                    ['icon'=>'bi-geo-alt-fill','title'=>'Adresse','content'=>'Avenue Industrielle, Zone Essengue<br>Cameroun, République du cameroun'],
-                    ['icon'=>'bi-telephone-fill','title'=>'Téléphone','content'=>'+237 620731930'],
-                    ['icon'=>'bi-envelope-fill','title'=>'Email','content'=>'info@mimosaflour.com<br>commercial@mimosaflour.com'],
-                    ['icon'=>'bi-clock-fill','title'=>'Horaires','content'=>'Lundi – Vendredi : 7h00 – 17h00<br>Samedi : 8h00 – 15h00'],
+                    ['icon'=>'bi-geo-alt-fill','title'=>__('Adresse'),'content'=>'Avenue Industrielle, Zone Essengue<br>Cameroun, République du cameroun'],
+                    ['icon'=>'bi-telephone-fill','title'=>__('Téléphone'),'content'=>'+237 620731930'],
+                    ['icon'=>'bi-envelope-fill','title'=>__('Email'),'content'=>'info@mimosaflour.com<br>commercial@mimosaflour.com'],
+                    ['icon'=>'bi-clock-fill','title'=>__('Horaires'),'content'=>'Lundi – Vendredi : 7h00 – 17h00<br>Samedi : 8h00 – 15h00'],
                 ] as $info)
                     <div class="d-flex gap-4 mb-4">
                         <div style="width:55px; height:55px; background:var(--primary); border-radius:10px;
@@ -60,43 +60,43 @@
             {{-- Formulaire de contact --}}
             <div class="col-lg-7" data-aos="fade-left">
                 <div style="background:#fff; border-radius:10px; padding:2.5rem; box-shadow:0 4px 25px rgba(0,0,0,.08);">
-                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">Envoyez-nous un Message</h3>
+                    <h3 style="color:var(--primary); margin-bottom:1.5rem;">{{ __('Envoyez-nous un Message') }}</h3>
 
                     {{-- Ce formulaire est purement frontend (pas de traitement backend ici) --}}
                     <form>
                         @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Votre Nom *</label>
+                                <label class="form-label small fw-bold">{{ __('Votre Nom *') }}</label>
                                 <input type="text" class="form-control" placeholder="Jean Dupont" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Votre Email *</label>
+                                <label class="form-label small fw-bold">{{ __('Votre Email *') }}</label>
                                 <input type="email" class="form-control" placeholder="ngankouwilfried@mimosaflour.com" required>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Téléphone</label>
+                                <label class="form-label small fw-bold">{{ __('Téléphone') }}</label>
                                 <input type="tel" class="form-control" placeholder="+237 672518012">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold">Sujet *</label>
+                                <label class="form-label small fw-bold">{{ __('Sujet *') }}</label>
                                 <select class="form-select" required>
-                                    <option value="">Choisir un sujet</option>
-                                    <option>Demande de devis</option>
-                                    <option>Informations produits</option>
-                                    <option>Partenariat commercial</option>
-                                    <option>Service après-vente</option>
-                                    <option>Autre</option>
+                                    <option value="">{{ __('Choisir un sujet') }}</option>
+                                    <option>{{ __('Demande de devis') }}</option>
+                                    <option>{{ __('Informations produits') }}</option>
+                                    <option>{{ __('Partenariat commercial') }}</option>
+                                    <option>{{ __('Service après-vente') }}</option>
+                                    <option>{{ __('Autre') }}</option>
                                 </select>
                             </div>
                             <div class="col-12">
-                                <label class="form-label small fw-bold">Message *</label>
+                                <label class="form-label small fw-bold">{{ __('Message *') }}</label>
                                 <textarea class="form-control" rows="5"
-                                          placeholder="Décrivez votre demande..." required></textarea>
+                                          placeholder="{{ __('Décrivez votre demande...') }}" required></textarea>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary-custom w-100 py-3">
-                                    <i class="bi bi-send-fill me-2"></i>Envoyer le message
+                                    <i class="bi bi-send-fill me-2"></i>{{ __('Envoyer le message') }}
                                 </button>
                             </div>
                         </div>

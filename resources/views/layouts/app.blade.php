@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -404,7 +404,7 @@
                 </span>
             </div>
             <div class="col-md-6 text-end">
-                <i class="bi bi-geo-alt-fill me-1"></i> DOUALA, CAMEROUN 
+                <i class="bi bi-geo-alt-fill me-1"></i> {{ __('DOUALA, CAMEROUN') }}
             </div>
         </div>
     </div>
@@ -425,31 +425,43 @@
             <ul class="navbar-nav ms-auto align-items-lg-center">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"
-                       href="{{ route('home') }}">Accueil</a>
+                       href="{{ route('home') }}">{{ __('Accueil') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}"
-                       href="{{ route('about') }}">À Propos</a>
+                       href="{{ route('about') }}">{{ __('À Propos') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('products.*') ? 'active' : '' }}"
-                       href="{{ route('products.index') }}">Produits</a>
+                       href="{{ route('products.index') }}">{{ __('Produits') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('services') ? 'active' : '' }}"
-                       href="{{ route('services') }}">Services</a>
+                       href="{{ route('services') }}">{{ __('Services') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('careers.*') ? 'active' : '' }}"
-                       href="{{ route('careers.index') }}">Carrières</a>
+                       href="{{ route('careers.index') }}">{{ __('Carrières') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}"
-                       href="{{ route('contact') }}">Contact</a>
+                       href="{{ route('contact') }}">{{ __('Contact') }}</a>
                 </li>
-                <li class="nav-item ms-lg-2">
+                {{-- Language switcher --}}
+                <li class="nav-item ms-lg-2 d-flex align-items-center" style="gap:.15rem; padding:.3rem 0;">
+                    <a href="{{ route('locale.switch', 'fr') }}"
+                       style="font-size:.72rem; font-weight:700; padding:.18rem .45rem; border-radius:3px; text-decoration:none;
+                              color:{{ app()->getLocale()==='fr' ? 'var(--dark)' : 'rgba(255,255,255,.5)' }};
+                              background:{{ app()->getLocale()==='fr' ? 'var(--secondary)' : 'transparent' }};">FR</a>
+                    <span style="color:rgba(255,255,255,.25); font-size:.7rem;">|</span>
+                    <a href="{{ route('locale.switch', 'en') }}"
+                       style="font-size:.72rem; font-weight:700; padding:.18rem .45rem; border-radius:3px; text-decoration:none;
+                              color:{{ app()->getLocale()==='en' ? 'var(--dark)' : 'rgba(255,255,255,.5)' }};
+                              background:{{ app()->getLocale()==='en' ? 'var(--secondary)' : 'transparent' }};">EN</a>
+                </li>
+                <li class="nav-item ms-lg-1">
                     <a class="nav-link position-relative {{ request()->routeIs('cart.index') ? 'active' : '' }}"
-                       href="{{ route('cart.index') }}" title="Mon panier">
+                       href="{{ route('cart.index') }}" title="{{ __('Mon panier') }}">
                         <i class="bi bi-cart3" style="font-size:1.2rem;"></i>
                         @php $cartCount = count(session('mimosa_cart', [])); @endphp
                         @if($cartCount > 0)
@@ -491,8 +503,7 @@
                 <img src="{{ asset('images/Logo Mimosa2.jpg') }}" alt="Mimosa" height="70"
                      class="mb-3 rounded">
                 <p class="small" style="color:rgba(255,255,255,0.65); line-height:1.8;">
-                    Mimosa  est un leader dans la production de farine de qualité supérieure au cameroun.
-                    Nous nous engageons à fournir des produits répondant aux standards internationaux.
+                    {{ __('Mimosa  est un leader dans la production de farine de qualité supérieure au cameroun. Nous nous engageons à fournir des produits répondant aux standards internationaux.') }}
                 </p>
                 <div class="social-links mt-3">
                     <a href="#"><i class="bi bi-facebook"></i></a>
@@ -504,41 +515,41 @@
 
             <!-- Liens rapides -->
             <div class="col-lg-2 col-md-3 col-6">
-                <h5>Liens rapides</h5>
+                <h5>{{ __('Liens rapides') }}</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{{ route('home') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Accueil</a></li>
-                    <li class="mb-2"><a href="{{ route('about') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>À Propos</a></li>
-                    <li class="mb-2"><a href="{{ route('products.index') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Produits</a></li>
-                    <li class="mb-2"><a href="{{ route('services') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Services</a></li>
-                    <li class="mb-2"><a href="{{ route('careers.index') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Carrières</a></li>
-                    <li class="mb-2"><a href="{{ route('admin.login') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Administration</a></li>
-                    <li class="mb-2"><a href="{{ route('employee.login') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>Espace Employés</a></li>
+                    <li class="mb-2"><a href="{{ route('home') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>{{ __('Accueil') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('about') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>{{ __('À Propos') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('products.index') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>{{ __('Produits') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('services') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>{{ __('Services') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('careers.index') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>{{ __('Carrières') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('admin.login') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>{{ __('Administration') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('employee.login') }}"><i class="bi bi-chevron-right me-1" style="color:var(--secondary);font-size:.7rem;"></i>{{ __('Espace Employés') }}</a></li>
                 </ul>
             </div>
 
             <!-- Produits -->
             <div class="col-lg-2 col-md-3 col-6">
-                <h5>Nos Produits</h5>
+                <h5>{{ __('Nos Produits') }}</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="{{ route('products.index') }}">Farine Premium 1kg</a></li>
-                    <li class="mb-2"><a href="{{ route('products.index') }}">Farine Premium 50kg</a></li>
-                    <li class="mb-2"><a href="{{ route('products.index') }}">Farine Boulangerie</a></li>
-                    <li class="mb-2"><a href="{{ route('products.index') }}">Semoule de Blé</a></li>
-                    <li class="mb-2"><a href="{{ route('products.index') }}">Son de Blé</a></li>
+                    <li class="mb-2"><a href="{{ route('products.index') }}">{{ __('Farine Premium 1kg') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('products.index') }}">{{ __('Farine Premium 50kg') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('products.index') }}">{{ __('Farine Boulangerie') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('products.index') }}">{{ __('Semoule de Blé') }}</a></li>
+                    <li class="mb-2"><a href="{{ route('products.index') }}">{{ __('Son de Blé') }}</a></li>
                 </ul>
             </div>
 
             <!-- Contact -->
             <div class="col-lg-4 col-md-6">
-                <h5>Contact</h5>
+                <h5>{{ __('Contact') }}</h5>
                 <ul class="list-unstyled">
                     <li class="mb-3 d-flex align-items-start">
                         <i class="bi bi-geo-alt-fill me-2 mt-1" style="color:var(--secondary);"></i>
-                        <span>Avenue Industrielle, Zone de Essengue,<br>Douala, CAMEROUN</span>
+                        <span>Avenue Industrielle, Zone de Essengue,<br>Douala, {{ app()->getLocale() === 'en' ? 'CAMEROON' : 'CAMEROUN' }}</span>
                     </li>
                     <li class="mb-2">
                         <i class="bi bi-telephone-fill me-2" style="color:var(--secondary);"></i>
-                        <a href="tel:+237620731930" >+237 620 731 930</a>
+                        <a href="tel:+237620731930">+237 620 731 930</a>
                     </li>
                     <li class="mb-2">
                         <i class="bi bi-envelope-fill me-2" style="color:var(--secondary);"></i>
@@ -546,7 +557,7 @@
                     </li>
                     <li class="mb-2">
                         <i class="bi bi-clock-fill me-2" style="color:var(--secondary);"></i>
-                        Lun – Ven : 7h00 – 17h00
+                        {{ __('Lun – Ven : 7h00 – 17h00') }}
                     </li>
                 </ul>
             </div>
@@ -556,7 +567,7 @@
     <div class="footer-bottom">
         <div class="container">
             © {{ date('Y') }} <strong style="color:var(--secondary);">Mimosa</strong>.
-            Tous droits réservés. — MIMOSA, CAMEROUN
+            {{ __('Tous droits réservés.') }} — MIMOSA, {{ app()->getLocale() === 'en' ? 'CAMEROON' : 'CAMEROUN' }}
         </div>
     </div>
 </footer>
@@ -568,7 +579,7 @@
             <div class="modal-header" style="background:var(--primary); color:#fff; border:none; padding:1.2rem 1.5rem;">
                 <h6 class="modal-title" id="cartModalLabel">
                     <i class="bi bi-cart-plus me-2" style="color:var(--secondary);"></i>
-                    Ajouter au panier
+                    {{ __('Ajouter au panier') }}
                 </h6>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
@@ -579,27 +590,27 @@
                     <div id="cartProductName" class="fw-bold mb-4" style="color:var(--primary); font-family:'Montserrat',sans-serif; font-size:1rem;"></div>
 
                     <div class="mb-4">
-                        <label class="form-label small fw-bold" style="color:#475569;">Type de commande</label>
+                        <label class="form-label small fw-bold" style="color:#475569;">{{ __('Type de commande') }}</label>
                         <div class="d-flex gap-4 mt-1">
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="type" id="typeDetail" value="detail" checked>
                                 <label class="form-check-label" for="typeDetail">
-                                    <strong class="small">Détail</strong>
+                                    <strong class="small">{{ __('Détail') }}</strong>
                                     <div id="detailPrice" class="text-muted" style="font-size:.72rem;"></div>
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="type" id="typeGros" value="gros">
                                 <label class="form-check-label" for="typeGros">
-                                    <strong class="small">Gros</strong>
-                                    <div class="text-muted" style="font-size:.72rem;">min. 100 unités — sur devis</div>
+                                    <strong class="small">{{ __('Gros') }}</strong>
+                                    <div class="text-muted" style="font-size:.72rem;">{{ __('min. 100 unités — sur devis') }}</div>
                                 </label>
                             </div>
                         </div>
                     </div>
 
                     <div class="mb-1">
-                        <label class="form-label small fw-bold" style="color:#475569;" for="cartQty">Quantité</label>
+                        <label class="form-label small fw-bold" style="color:#475569;" for="cartQty">{{ __('Quantité') }}</label>
                         <input type="number" name="quantity" id="cartQty" class="form-control"
                                value="1" min="1" required
                                style="border-color:#e2e8f0;">
@@ -608,7 +619,7 @@
                 </div>
                 <div class="modal-footer border-0 pt-0" style="padding:0 1.5rem 1.5rem;">
                     <button type="submit" class="btn btn-primary-custom w-100">
-                        <i class="bi bi-cart-check me-2"></i>Ajouter au panier
+                        <i class="bi bi-cart-check me-2"></i>{{ __('Ajouter au panier') }}
                     </button>
                 </div>
             </form>

@@ -8,8 +8,8 @@
         <h1>{{ $jobOffer->title }}</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('careers.index') }}">Carrières</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Accueil') }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('careers.index') }}">{{ __('Carrières') }}</a></li>
                 <li class="breadcrumb-item active">{{ $jobOffer->title }}</li>
             </ol>
         </nav>
@@ -41,28 +41,28 @@
                     <div style="background:var(--accent); border-radius:8px; padding:1rem 1.5rem; margin-bottom:2rem;">
                         <div class="row g-3">
                             <div class="col-6">
-                                <div class="small text-muted">Type de contrat</div>
+                                <div class="small text-muted">{{ __('Type de contrat') }}</div>
                                 <div class="fw-bold text-navy">{{ $jobOffer->type }}</div>
                             </div>
                             <div class="col-6">
-                                <div class="small text-muted">Localisation</div>
+                                <div class="small text-muted">{{ __('Localisation') }}</div>
                                 <div class="fw-bold text-navy">{{ $jobOffer->location }}</div>
                             </div>
                             <div class="col-6">
-                                <div class="small text-muted">Date limite</div>
+                                <div class="small text-muted">{{ __('Date limite') }}</div>
                                 <div class="fw-bold" style="color: {{ $jobOffer->deadline->isPast() ? 'red' : 'var(--primary)' }}">
                                     {{ $jobOffer->deadline->format('d/m/Y') }}
                                 </div>
                             </div>
                             <div class="col-6">
-                                <div class="small text-muted">Publication</div>
+                                <div class="small text-muted">{{ __('Publication') }}</div>
                                 <div class="fw-bold text-navy">{{ $jobOffer->created_at->format('d/m/Y') }}</div>
                             </div>
                         </div>
                     </div>
 
                     <h5 style="color:var(--primary); border-bottom:2px solid var(--secondary); padding-bottom:.5rem; margin-bottom:1rem;">
-                        Description du Poste
+                        {{ __('Description du Poste') }}
                     </h5>
                     <div class="text-muted" style="line-height:2;">
                         {!! nl2br(e($jobOffer->description)) !!}
@@ -70,7 +70,7 @@
 
                     @if($jobOffer->requirements)
                         <h5 style="color:var(--primary); border-bottom:2px solid var(--secondary); padding-bottom:.5rem; margin:2rem 0 1rem;">
-                            Profil & Exigences
+                            {{ __('Profil & Exigences') }}
                         </h5>
                         <div class="text-muted" style="line-height:2;">
                             {!! nl2br(e($jobOffer->requirements)) !!}
@@ -83,7 +83,7 @@
             <div class="col-lg-5" data-aos="fade-left">
                 <div style="background:#fff; border-radius:10px; padding:2.5rem; box-shadow:0 4px 25px rgba(0,0,0,.08); position:sticky; top:90px;">
                     <h4 style="color:var(--primary); margin-bottom:1.5rem;">
-                        <i class="bi bi-send me-2 text-gold"></i>Postuler maintenant
+                        <i class="bi bi-send me-2 text-gold"></i>{{ __('Postuler maintenant') }}
                     </h4>
 
                     @if($errors->any())
@@ -104,7 +104,7 @@
 
                         <div class="row g-3">
                             <div class="col-6">
-                                <label class="form-label small fw-bold">Prénom *</label>
+                                <label class="form-label small fw-bold">{{ __('Prénom *') }}</label>
                                 <input type="text" name="first_name"
                                        class="form-control @error('first_name') is-invalid @enderror"
                                        value="{{ old('first_name') }}"
@@ -114,7 +114,7 @@
                                 @enderror
                             </div>
                             <div class="col-6">
-                                <label class="form-label small fw-bold">Nom *</label>
+                                <label class="form-label small fw-bold">{{ __('Nom *') }}</label>
                                 <input type="text" name="last_name"
                                        class="form-control @error('last_name') is-invalid @enderror"
                                        value="{{ old('last_name') }}"
@@ -124,7 +124,7 @@
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label class="form-label small fw-bold">Email *</label>
+                                <label class="form-label small fw-bold">{{ __('Email *') }}</label>
                                 <input type="email" name="email"
                                        class="form-control @error('email') is-invalid @enderror"
                                        value="{{ old('email') }}"
@@ -134,7 +134,7 @@
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label class="form-label small fw-bold">Téléphone</label>
+                                <label class="form-label small fw-bold">{{ __('Téléphone') }}</label>
                                 <input type="tel" name="phone"
                                        class="form-control @error('phone') is-invalid @enderror"
                                        value="{{ old('phone') }}"
@@ -144,16 +144,16 @@
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label class="form-label small fw-bold">Lettre de motivation</label>
+                                <label class="form-label small fw-bold">{{ __('Lettre de motivation') }}</label>
                                 <textarea name="cover_letter" rows="4"
                                           class="form-control @error('cover_letter') is-invalid @enderror"
-                                          placeholder="Présentez-vous et expliquez votre motivation...">{{ old('cover_letter') }}</textarea>
+                                          placeholder="{{ __('Présentez-vous et expliquez votre motivation...') }}">{{ old('cover_letter') }}</textarea>
                                 @error('cover_letter')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="col-12">
-                                <label class="form-label small fw-bold">CV (PDF uniquement, max 5 Mo) *</label>
+                                <label class="form-label small fw-bold">{{ __('CV (PDF uniquement, max 5 Mo) *') }}</label>
                                 <input type="file" name="cv"
                                        accept=".pdf"
                                        class="form-control @error('cv') is-invalid @enderror"
@@ -163,12 +163,12 @@
                                 @enderror
                                 <div class="form-text">
                                     <i class="bi bi-info-circle me-1"></i>
-                                    Fichier PDF uniquement, taille maximale 5 Mo.
+                                    {{ __('Fichier PDF uniquement, taille maximale 5 Mo.') }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <label class="form-label small fw-bold">
-                                    Lettre de motivation (PDF, facultatif)
+                                    {{ __('Lettre de motivation (PDF, facultatif)') }}
                                 </label>
                                 <input type="file" name="lettre"
                                        accept=".pdf"
@@ -178,12 +178,12 @@
                                 @enderror
                                 <div class="form-text">
                                     <i class="bi bi-info-circle me-1"></i>
-                                    Fichier PDF uniquement, taille maximale 5 Mo.
+                                    {{ __('Fichier PDF uniquement, taille maximale 5 Mo.') }}
                                 </div>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary-custom w-100 py-3">
-                                    <i class="bi bi-send-fill me-2"></i>Envoyer ma candidature
+                                    <i class="bi bi-send-fill me-2"></i>{{ __('Envoyer ma candidature') }}
                                 </button>
                             </div>
                         </div>
@@ -192,7 +192,7 @@
                     <div class="text-center mt-3">
                         <small class="text-muted">
                             <i class="bi bi-lock me-1"></i>
-                            Vos données sont protégées et traitées confidentiellement.
+                            {{ __('Vos données sont protégées et traitées confidentiellement.') }}
                         </small>
                     </div>
                 </div>

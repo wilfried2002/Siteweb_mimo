@@ -162,11 +162,11 @@
 {{-- Breadcrumb --}}
 <section class="breadcrumb-section">
     <div class="container">
-        <h1 data-aos="fade-right">À Propos de Mimosa</h1>
+        <h1 data-aos="fade-right">{{ __('À Propos de Mimosa') }}</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="breadcrumb-item active">À Propos</li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Accueil') }}</a></li>
+                <li class="breadcrumb-item active">{{ __('À Propos') }}</li>
             </ol>
         </nav>
     </div>
@@ -177,23 +177,18 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
-                <span style="color:var(--secondary); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:3px; text-transform:uppercase;">Notre Histoire</span>
+                <span style="color:var(--secondary); font-family:'Montserrat',sans-serif; font-weight:600; font-size:.85rem; letter-spacing:3px; text-transform:uppercase;">{{ __('Notre Histoire') }}</span>
                 <h2 style="color:var(--primary); margin:1rem 0 1.5rem; font-size:2.2rem;">
-                    Une Histoire de Passion<br>pour la Qualité
+                    {{ __('Une Histoire de Passion pour la Qualité') }}
                 </h2>
                 <p class="text-muted" style="line-height:2;">
-                    <strong>Mimosa</strong> est née de la volonté de développer une industrie agroalimentaire forte et compétitive
-                    en République du Cameroun. Fondée par un visionnaires, la société s'est imposée
-                    comme une référence incontournable dans la production de farine de blé.
+                    {{ __('Mimosa est née de la volonté de développer une industrie agroalimentaire forte et compétitive en République du Cameroun. Fondée par un visionnaires, la société s\'est imposée comme une référence incontournable dans la production de farine de blé.') }}
                 </p>
                 <p class="text-muted" style="line-height:2;">
-                    Dotée d'un moulin ultramoderne aux normes européennes, Mimosa transforme quotidiennement
-                    des centaines de tonnes de blé importé en farine de haute qualité, contribuant ainsi à la sécurité
-                    alimentaire de la population camerounaise.
+                    {{ __('Dotée d\'un moulin ultramoderne aux normes européennes, Mimosa transforme quotidiennement des centaines de tonnes de blé importé en farine de haute qualité, contribuant ainsi à la sécurité alimentaire de la population camerounaise.') }}
                 </p>
                 <p class="text-muted" style="line-height:2;">
-                    Aujourd'hui, nos produits sont distribués dans toutes les 10 régions du Cameroun et nous continuons
-                    d'investir dans l'innovation pour maintenir notre position de leader.
+                    {{ __('Aujourd\'hui, nos produits sont distribués dans toutes les 10 régions du Cameroun et nous continuons d\'investir dans l\'innovation pour maintenir notre position de leader.') }}
                 </p>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
@@ -210,8 +205,8 @@
 <section style="background: var(--light); padding: 5rem 0;">
     <div class="container">
         <div class="section-title" data-aos="fade-up" data-aos-duration="700">
-            <span class="subtitle">Nos Fondements</span>
-            <h2>Mission, Vision & Valeurs</h2>
+            <span class="subtitle">{{ __('Nos Fondements') }}</span>
+            <h2>{{ __('Mission, Vision & Valeurs') }}</h2>
         </div>
         <div class="row g-4">
 
@@ -221,10 +216,9 @@
                     <div class="mvv-icon" style="animation-delay: 0s;">
                         <i class="bi bi-bullseye"></i>
                     </div>
-                    <h4 style="color:var(--primary); margin-bottom:1rem;">Notre Mission</h4>
+                    <h4 style="color:var(--primary); margin-bottom:1rem;">{{ __('Notre Mission') }}</h4>
                     <p class="text-muted" style="line-height:1.9; margin:0;">
-                        Produire et distribuer des farines de blé de qualité supérieure, accessibles à tous, contribuant
-                        à l'alimentation saine des populations camerounaises tout en soutenant le développement économique local.
+                        {{ __('Produire et distribuer des farines de blé de qualité supérieure, accessibles à tous, contribuant à l\'alimentation saine des populations camerounaises tout en soutenant le développement économique local.') }}
                     </p>
                 </div>
             </div>
@@ -235,10 +229,9 @@
                     <div class="mvv-icon" style="animation-delay: .6s;">
                         <i class="bi bi-eye"></i>
                     </div>
-                    <h4 style="color:var(--primary); margin-bottom:1rem;">Notre Vision</h4>
+                    <h4 style="color:var(--primary); margin-bottom:1rem;">{{ __('Notre Vision') }}</h4>
                     <p class="text-muted" style="line-height:1.9; margin:0;">
-                        Devenir le leader panafricain de la minoterie, reconnu pour l'excellence de ses produits,
-                        l'innovation continue et l'impact positif sur les communautés dans lesquelles nous opérons.
+                        {{ __('Devenir le leader panafricain de la minoterie, reconnu pour l\'excellence de ses produits, l\'innovation continue et l\'impact positif sur les communautés dans lesquelles nous opérons.') }}
                     </p>
                 </div>
             </div>
@@ -249,13 +242,13 @@
                     <div class="mvv-icon" style="animation-delay: 1.2s;">
                         <i class="bi bi-gem"></i>
                     </div>
-                    <h4 style="color:var(--primary); margin-bottom:1rem;">Nos Valeurs</h4>
+                    <h4 style="color:var(--primary); margin-bottom:1rem;">{{ __('Nos Valeurs') }}</h4>
                     <ul class="list-unstyled mb-0" style="line-height:1;">
                         @foreach(['Excellence','Intégrité','Innovation','Responsabilité sociale','Respect de l\'environnement'] as $i => $val)
                             <li data-aos="fade-right" data-aos-delay="{{ 400 + $i * 80 }}" data-aos-duration="400"
                                 style="display:flex; align-items:center; gap:.6rem; padding:.45rem 0; border-bottom:1px solid #f0f0f0;">
                                 <i class="bi bi-check-circle-fill" style="color:var(--secondary); flex-shrink:0;"></i>
-                                <span class="text-muted small fw-bold">{{ $val }}</span>
+                                <span class="text-muted small fw-bold">{{ __($val) }}</span>
                             </li>
                         @endforeach
                     </ul>
@@ -271,10 +264,10 @@
     <div class="container">
         <div class="row g-4 text-center">
             @foreach([
-                ['n'=>'500+','raw'=>'500+','l'=>'Tonnes / Jour'],
-                ['n'=>'5 000+','raw'=>'5000+','l'=>'Clients Actifs'],
-                ['n'=>'15+','raw'=>'15+','l'=>'Années d\'Expérience'],
-                ['n'=>'200+','raw'=>'200+','l'=>'Emplois Créés'],
+                ['n'=>'500+','raw'=>'500+','l'=>__('Tonnes / Jour')],
+                ['n'=>'5 000+','raw'=>'5000+','l'=>__('Clients Actifs')],
+                ['n'=>'15+','raw'=>'15+','l'=>__('Années d\'Expérience')],
+                ['n'=>'200+','raw'=>'200+','l'=>__('Emplois Créés')],
             ] as $idx => $s)
                 <div class="col-6 col-md-3" data-aos="zoom-in" data-aos-delay="{{ $idx * 120 }}" data-aos-duration="600">
                     <div class="stat-item">
@@ -291,25 +284,25 @@
 <section style="padding: 5rem 0; background:#fff;">
     <div class="container">
         <div class="section-title" data-aos="fade-up" data-aos-duration="700">
-            <span class="subtitle">Comment nous travaillons</span>
-            <h2>Notre Processus de Production</h2>
+            <span class="subtitle">{{ __('Comment nous travaillons') }}</span>
+            <h2>{{ __('Notre Processus de Production') }}</h2>
         </div>
 
         <div class="row g-4 process-grid">
             @php
                 $steps = [
-                    ['step'=>'01','icon'=>'bi-box','title'=>'Réception du Blé',
-                     'desc'=>'Sélection rigoureuse du blé à l\'importation, avec contrôle de l\'humidité, de la pureté et des qualités nutritives.'],
-                    ['step'=>'02','icon'=>'bi-droplet','title'=>'Nettoyage & Trempage',
-                     'desc'=>'Élimination de toutes impuretés. Le blé est lavé et conditionné à l\'humidité optimale pour la mouture.'],
-                    ['step'=>'03','icon'=>'bi-gear-wide-connected','title'=>'Mouture Industrielle',
-                     'desc'=>'Broyage progressif entre cylindres d\'acier pour obtenir une farine fine, régulière et de haute qualité.'],
-                    ['step'=>'04','icon'=>'bi-funnel','title'=>'Tamisage & Tri',
-                     'desc'=>'Séparation des différentes fractions : farine blanche, farine bise, semoule et son de blé.'],
-                    ['step'=>'05','icon'=>'bi-clipboard-check','title'=>'Contrôle Qualité',
-                     'desc'=>'Analyses en laboratoire : taux de cendres, gluten, humidité, granulométrie – avant tout conditionnement.'],
-                    ['step'=>'06','icon'=>'bi-bag-check','title'=>'Conditionnement',
-                     'desc'=>'Ensachage automatisé en sacs de différents grammages, étiquetés et scellés pour garantir la fraîcheur.'],
+                    ['step'=>'01','icon'=>'bi-box','title'=>__('Réception du Blé'),
+                     'desc'=>__('Sélection rigoureuse du blé à l\'importation, avec contrôle de l\'humidité, de la pureté et des qualités nutritives.')],
+                    ['step'=>'02','icon'=>'bi-droplet','title'=>__('Nettoyage & Trempage'),
+                     'desc'=>__('Élimination de toutes impuretés. Le blé est lavé et conditionné à l\'humidité optimale pour la mouture.')],
+                    ['step'=>'03','icon'=>'bi-gear-wide-connected','title'=>__('Mouture Industrielle'),
+                     'desc'=>__('Broyage progressif entre cylindres d\'acier pour obtenir une farine fine, régulière et de haute qualité.')],
+                    ['step'=>'04','icon'=>'bi-funnel','title'=>__('Tamisage & Tri'),
+                     'desc'=>__('Séparation des différentes fractions : farine blanche, farine bise, semoule et son de blé.')],
+                    ['step'=>'05','icon'=>'bi-clipboard-check','title'=>__('Contrôle Qualité'),
+                     'desc'=>__('Analyses en laboratoire : taux de cendres, gluten, humidité, granulométrie – avant tout conditionnement.')],
+                    ['step'=>'06','icon'=>'bi-bag-check','title'=>__('Conditionnement'),
+                     'desc'=>__('Ensachage automatisé en sacs de différents grammages, étiquetés et scellés pour garantir la fraîcheur.')],
                 ];
                 $aosList = ['zoom-in-up','zoom-in-up','zoom-in-up','zoom-in-down','zoom-in-down','zoom-in-down'];
             @endphp

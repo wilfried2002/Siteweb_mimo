@@ -22,6 +22,8 @@ return Application::configure(basePath: dirname(__DIR__))
             return route('admin.login');
         });
 
+        $middleware->appendToGroup('web', \App\Http\Middleware\SetLocale::class);
+
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
             'role'  => \App\Http\Middleware\RoleMiddleware::class,

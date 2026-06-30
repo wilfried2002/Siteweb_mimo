@@ -5,11 +5,11 @@
 
 <section class="breadcrumb-section">
     <div class="container">
-        <h1>Nos Produits</h1>
+        <h1>{{ __('Nos Produits') }}</h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="{{ route('home') }}">Accueil</a></li>
-                <li class="breadcrumb-item active">Produits</li>
+                <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('Accueil') }}</a></li>
+                <li class="breadcrumb-item active">{{ __('Produits') }}</li>
             </ol>
         </nav>
     </div>
@@ -18,8 +18,8 @@
 <section style="padding: 4rem 0; background: var(--light);">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
-            <span class="subtitle">Notre gamme complète</span>
-            <h2>Tous Nos Produits</h2>
+            <span class="subtitle">{{ __('Notre gamme complète') }}</span>
+            <h2>{{ __('Tous Nos Produits') }}</h2>
         </div>
 
         @if($products->count() > 0)
@@ -48,13 +48,13 @@
                                 <div class="d-flex gap-2 mt-3">
                                     <a href="{{ route('products.show', $product) }}"
                                        class="btn btn-outline-secondary flex-grow-1" style="font-size:.82rem;">
-                                        Détail <i class="bi bi-arrow-right ms-1"></i>
+                                        {{ __('Détail') }} <i class="bi bi-arrow-right ms-1"></i>
                                     </a>
                                     <button type="button"
                                             class="btn btn-primary-custom flex-grow-1"
                                             style="font-size:.82rem;"
                                             onclick="openCartModal({{ $product->id }}, '{{ addslashes($product->name) }}', {{ $product->price ?? 'null' }})">
-                                        <i class="bi bi-cart-plus me-1"></i>Commander
+                                        <i class="bi bi-cart-plus me-1"></i>{{ __('Commander') }}
                                     </button>
                                 </div>
                             </div>
@@ -89,7 +89,7 @@
                                 <h5 class="card-title mt-2">{{ $p['name'] }}</h5>
                                 <p class="card-text text-muted small flex-grow-1">{{ $p['desc'] }}</p>
                                 <a href="{{ route('contact') }}"
-                                   class="btn btn-primary-custom mt-3 w-100">Commander</a>
+                                   class="btn btn-primary-custom mt-3 w-100">{{ __('Commander') }}</a>
                             </div>
                         </div>
                     </div>
@@ -102,12 +102,12 @@
 {{-- CTA commander --}}
 <section style="background: var(--primary); padding: 4rem 0;">
     <div class="container text-center text-white" data-aos="fade-up">
-        <h3 class="mb-3">Intéressé par nos produits en gros ?</h3>
+        <h3 class="mb-3">{{ __('Intéressé par nos produits en gros ?') }}</h3>
         <p class="mb-4" style="opacity:.85;">
-            Contactez notre équipe commerciale pour obtenir un devis personnalisé et des conditions avantageuses.
+            {{ __('Contactez notre équipe commerciale pour obtenir un devis personnalisé et des conditions avantageuses.') }}
         </p>
         <a href="{{ route('contact') }}" class="btn btn-primary-custom">
-            Demander un devis <i class="bi bi-send ms-2"></i>
+            {{ __('Demander un devis') }} <i class="bi bi-send ms-2"></i>
         </a>
     </div>
 </section>
