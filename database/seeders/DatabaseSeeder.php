@@ -83,15 +83,15 @@ class DatabaseSeeder extends Seeder
             ],
         ];
 
-        // Copier les images de public/images vers storage/public/sliders
+        // Copier les images dans public/assets/images/sliders (servis directement, pas besoin de storage:link)
+        $sliderDir = public_path('assets/images/sliders');
+        if (!is_dir($sliderDir)) mkdir($sliderDir, 0755, true);
+
         $sourceImages = [
             'slider1.jpg' => public_path('images/slider-minoterie-moderne-saker-farine-de-ble-02-copie-3-qq4g6nbocpyf9lys4yjzo0fvoxwg94bbquyjrktbqw.jpg'),
             'slider2.jpg' => public_path('images/bf068541-d51e-4a93-a5b5-b3fc4a2f7b87.jfif'),
             'slider3.jpg' => public_path('images/16d1942a-3411-4f6c-8f5a-c05abc430fb7 (1).jfif'),
         ];
-
-        $sliderDir = storage_path('app/public/sliders');
-        if (!is_dir($sliderDir)) mkdir($sliderDir, 0755, true);
 
         foreach ($sourceImages as $name => $src) {
             $dst = $sliderDir . '/' . $name;
@@ -101,22 +101,22 @@ class DatabaseSeeder extends Seeder
         }
 
         foreach ($sliders as $slider) {
-            Slider::updateOrCreate(['title' => $slider['title']], $slider);
+            Slider::firstOrCreate(['title' => $slider['title']], $slider);
         }
 
         // =====================================================
         // PRODUITS
         // =====================================================
-        $productsDir = storage_path('app/public/products');
+        $productsDir = public_path('assets/images/products');
         if (!is_dir($productsDir)) mkdir($productsDir, 0755, true);
 
         $productImages = [
-            'premium1kg.jpg' => public_path('images/Prenuim1kg.jpg'),
+            'premium1kg.jpg'  => public_path('images/Prenuim1kg.jpg'),
             'premium50kg.jpg' => public_path('images/Prenuim50kg.jpg'),
-            'galimoise.jpg'  => public_path('images/galimoise.jpg'),
-            'makala.jpg'     => public_path('images/Makala.jpg'),
-            'beignet.jpg'    => public_path('images/Beignet saker.jpg'),
-            'premium.jpg'    => public_path('images/prenium.jpg'),
+            'galimoise.jpg'   => public_path('images/galimoise.jpg'),
+            'makala.jpg'      => public_path('images/Makala.jpg'),
+            'beignet.jpg'     => public_path('images/Beignet saker.jpg'),
+            'premium.jpg'     => public_path('images/prenium.jpg'),
         ];
 
         foreach ($productImages as $name => $src) {
@@ -136,6 +136,7 @@ class DatabaseSeeder extends Seeder
                 'weight'      => '1 kg',
                 'is_featured' => true,
                 'is_active'   => true,
+                'sort_order'  => 1,
             ],
             [
                 'name'        => 'Farine Premium Mimosa 50kg',
@@ -146,6 +147,7 @@ class DatabaseSeeder extends Seeder
                 'weight'      => '50 kg',
                 'is_featured' => true,
                 'is_active'   => true,
+                'sort_order'  => 2,
             ],
             [
                 'name'        => 'Farine Galimoise Mimosa',
@@ -156,6 +158,7 @@ class DatabaseSeeder extends Seeder
                 'weight'      => '25 kg',
                 'is_featured' => true,
                 'is_active'   => true,
+                'sort_order'  => 3,
             ],
             [
                 'name'        => 'Farine Spéciale Makala',
@@ -166,6 +169,7 @@ class DatabaseSeeder extends Seeder
                 'weight'      => '1 kg',
                 'is_featured' => false,
                 'is_active'   => true,
+                'sort_order'  => 0,
             ],
             [
                 'name'        => 'Farine Beignets Saker Mimosa',
@@ -176,6 +180,7 @@ class DatabaseSeeder extends Seeder
                 'weight'      => '500 g',
                 'is_featured' => false,
                 'is_active'   => true,
+                'sort_order'  => 0,
             ],
             [
                 'name'        => 'Farine Premium Standard Mimosa',
@@ -186,11 +191,12 @@ class DatabaseSeeder extends Seeder
                 'weight'      => '5 kg',
                 'is_featured' => true,
                 'is_active'   => true,
+                'sort_order'  => 4,
             ],
         ];
 
         foreach ($products as $product) {
-            Product::updateOrCreate(['name' => $product['name']], $product);
+            Product::firstOrCreate(['name' => $product['name']], $product);
         }
 
         // =====================================================
@@ -227,7 +233,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         foreach ($jobs as $job) {
-            JobOffer::updateOrCreate(['title' => $job['title']], $job);
+            JobOffer::firstOrCreate(['title' => $job['title']], $job);
         }
 
         $this->command->info('✅ Base de données initialisée avec succès !');

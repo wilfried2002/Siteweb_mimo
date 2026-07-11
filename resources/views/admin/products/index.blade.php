@@ -6,9 +6,14 @@
 <div class="table-card">
     <div class="table-header">
         <h5><i class="bi bi-bag me-2" style="color:var(--admin-secondary);"></i>Liste des Produits</h5>
-        <a href="{{ route('admin.products.create') }}" class="btn btn-admin">
-            <i class="bi bi-plus-circle me-2"></i>Nouveau produit
-        </a>
+        <div class="d-flex gap-2">
+            <a href="{{ route('admin.products.order') }}" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-up-down me-1"></i>Gérer l'ordre
+            </a>
+            <a href="{{ route('admin.products.create') }}" class="btn btn-admin">
+                <i class="bi bi-plus-circle me-2"></i>Nouveau produit
+            </a>
+        </div>
     </div>
     <div class="table-responsive">
         <table class="table table-hover mb-0">

@@ -47,6 +47,16 @@ return [
             'report' => false,
         ],
 
+        // Disk pointant directement sur public/assets/images — aucun storage:link requis
+        'images' => [
+            'driver' => 'local',
+            'root' => public_path('assets/images'),
+            'url' => rtrim(env('APP_URL', 'http://localhost'), '/').'/assets/images',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

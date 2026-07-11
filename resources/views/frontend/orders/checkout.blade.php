@@ -146,7 +146,12 @@
 
                     @foreach($items as $item)
                         <div class="d-flex align-items-center gap-3 mb-3 pb-3" style="border-bottom:1px solid #f8f8f8;">
-                            <img src="{{ $item['product_image'] ? asset('storage/'.$item['product_image']) : asset('images/prenium.jpg') }}"
+                            @php
+                                $coImg = $item['product_image']
+                                    ? (file_exists(public_path('assets/images/'.$item['product_image'])) ? asset('assets/images/'.$item['product_image']) : asset('storage/'.$item['product_image']))
+                                    : asset('assets/images/products/premium1kg.jpg');
+                            @endphp
+                            <img src="{{ $coImg }}"
                                  style="width:50px; height:50px; object-fit:cover; border-radius:8px;">
                             <div class="flex-grow-1">
                                 <div class="small fw-bold" style="color:var(--primary);">

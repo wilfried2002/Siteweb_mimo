@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         $sliders  = Slider::active()->get();
-        $products = Product::active()->featured()->latest()->take(6)->get();
+        $products = Product::active()->featured()->take(6)->get();
         $jobs     = JobOffer::active()->latest()->take(3)->get();
 
         return view('frontend.home', compact('sliders', 'products', 'jobs'));

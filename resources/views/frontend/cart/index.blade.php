@@ -67,7 +67,12 @@
                                  class="d-flex align-items-center gap-4 flex-wrap">
 
                                 {{-- Image --}}
-                                <img src="{{ $item['product_image'] ? asset('storage/'.$item['product_image']) : asset('images/prenium.jpg') }}"
+                                @php
+                                    $cartImg = $item['product_image']
+                                        ? (file_exists(public_path('assets/images/'.$item['product_image'])) ? asset('assets/images/'.$item['product_image']) : asset('storage/'.$item['product_image']))
+                                        : asset('assets/images/products/premium1kg.jpg');
+                                @endphp
+                                <img src="{{ $cartImg }}"
                                      alt="{{ $item['product_name'] }}"
                                      style="width:70px; height:70px; object-fit:cover; border-radius:10px; flex-shrink:0;">
 

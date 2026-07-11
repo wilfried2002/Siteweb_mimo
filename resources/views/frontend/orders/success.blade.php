@@ -76,7 +76,7 @@
                     <h6 style="color:var(--primary); margin-bottom:1rem;">Articles commandés</h6>
                     @foreach($order->items as $item)
                         <div class="d-flex align-items-center gap-3 py-2" style="border-bottom:1px solid #f0f0f0;">
-                            <img src="{{ $item->product?->image ? asset('storage/'.$item->product->image) : asset('images/prenium.jpg') }}"
+                            <img src="{{ $item->product?->image_url ?? asset('assets/images/products/premium1kg.jpg') }}"
                                  style="width:55px; height:55px; object-fit:cover; border-radius:8px;">
                             <div class="flex-grow-1">
                                 <div class="fw-bold small" style="color:var(--primary);">{{ $item->product_name }}</div>

@@ -34,7 +34,7 @@
                             </span>
                         </td>
                         <td>
-                            <img src="{{ asset('storage/' . $slider->image) }}"
+                            <img src="{{ $slider->image_url }}"
                                  alt="{{ $slider->title }}"
                                  style="height:55px; width:110px; object-fit:cover; border-radius:6px;">
                         </td>

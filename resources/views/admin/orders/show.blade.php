@@ -94,7 +94,7 @@
                             <tr>
                                 <td>
                                     <div class="d-flex align-items-center gap-3">
-                                        <img src="{{ $item->product?->image ? asset('storage/'.$item->product->image) : asset('images/prenium.jpg') }}"
+                                        <img src="{{ $item->product?->image_url ?? asset('assets/images/products/premium1kg.jpg') }}"
                                              style="width:42px; height:42px; object-fit:cover; border-radius:6px;">
                                         <div>
                                             <div class="small fw-bold">{{ $item->product_name }}</div>

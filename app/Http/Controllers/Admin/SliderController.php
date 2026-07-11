@@ -32,7 +32,7 @@ class SliderController extends Controller
             'is_active'   => ['boolean'],
         ]);
 
-        $validated['image']     = $request->file('image')->store('sliders', 'public');
+        $validated['image']     = $request->file('image')->store('sliders', 'images');
         $validated['is_active'] = $request->boolean('is_active', true);
 
         Slider::create($validated);
@@ -59,8 +59,8 @@ class SliderController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            Storage::disk('public')->delete($slider->image);
-            $validated['image'] = $request->file('image')->store('sliders', 'public');
+            Storage::disk('images')->delete($slider->image);
+            $validated['image'] = $request->file('image')->store('sliders', 'images');
         }
 
         $validated['is_active'] = $request->boolean('is_active');
@@ -73,7 +73,7 @@ class SliderController extends Controller
 
     public function destroy(Slider $slider)
     {
-        Storage::disk('public')->delete($slider->image);
+        Storage::disk('images')->delete($slider->image);
         $slider->delete();
 
         return redirect()->route('admin.sliders.index')

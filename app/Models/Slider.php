@@ -29,4 +29,17 @@ class Slider extends Model
     {
         return $query->where('is_active', true)->orderBy('order');
     }
+
+    public function getImageUrlAttribute(): string
+    {
+        if ($this->image) {
+            if (file_exists(public_path('assets/images/' . $this->image))) {
+                return asset('assets/images/' . $this->image);
+            }
+            if (file_exists(public_path('storage/' . $this->image))) {
+                return asset('storage/' . $this->image);
+            }
+        }
+        return asset('assets/images/sliders/slider1.jpg');
+    }
 }

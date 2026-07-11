@@ -41,7 +41,7 @@
         <label class="form-label">Image du slider {{ isset($slider) ? '(laisser vide pour conserver)' : '*' }}</label>
         @if(isset($slider))
             <div class="mb-2">
-                <img src="{{ asset('storage/' . $slider->image) }}"
+                <img src="{{ $slider->image_url }}"
                      alt="Image actuelle"
                      style="height:100px; border-radius:8px; object-fit:cover;">
                 <span class="text-muted small ms-2">Image actuelle</span>

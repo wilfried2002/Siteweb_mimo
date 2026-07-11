@@ -97,6 +97,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         // Produits (CRUD complet)
+        Route::get('products/order',  [AdminProductController::class, 'reorder'])->name('products.order');
+        Route::post('products/order', [AdminProductController::class, 'saveOrder'])->name('products.save-order');
         Route::resource('products', AdminProductController::class)->except(['show'])
              ->names([
                  'index'   => 'products.index',
