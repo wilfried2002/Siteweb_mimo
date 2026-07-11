@@ -193,6 +193,28 @@ class DatabaseSeeder extends Seeder
                 'is_active'   => true,
                 'sort_order'  => 4,
             ],
+            [
+                'name'        => 'Farine TESA Pain Kumba 50kg',
+                'description' => "La farine de froment TESA Pain Kumba a été spécialement développée pour répondre aux exigences des artisans boulangers qui souhaitent produire un véritable Pain Kumba de qualité supérieure. Grâce à sa formulation spécifique et à sa teneur élevée en protéines (minimum 12 %), elle offre une pâte plus résistante, une excellente fermentation et un développement optimal du pain.\n\nElle permet d'obtenir des pains généreux, bien levés, à la mie blanche, tendre et particulièrement moelleuse. Sa texture reste agréable pendant plusieurs jours, offrant une excellente conservation de la fraîcheur, un critère essentiel pour le Pain Kumba traditionnel made In Cameroun.\n\nSa bonne absorption d'eau améliore le rendement de production tout en garantissant une qualité constante d'une fabrication à l'autre. Enrichie en fer, acide folique, zinc et vitamine B12, elle allie performance technologique et valeur nutritionnelle.\n\nAvec TESA Pain Kumba, les boulangers produisent un pain apprécié pour son moelleux, sa belle présentation, sa conservation prolongée et son goût authentique, tout en améliorant leur rentabilité.\n\nTESA Pain Kumba : Plus de fraîcheur, plus de moelleux, plus de conservation.\n\nDisponible en sacs de 50 kg. Vente en gros et en détail.",
+                'image'       => 'products/kumba_bread_tesa.jpg',
+                'price'       => null,
+                'category'    => 'boulangerie',
+                'weight'      => '50 kg',
+                'is_featured' => true,
+                'is_active'   => true,
+                'sort_order'  => 5,
+            ],
+            [
+                'name'        => 'Farine TESA Complète T110 50kg',
+                'description' => "La Farine Complète TESA est élaborée à partir de grains de blé soigneusement sélectionnés et conserve l'ensemble des éléments nobles du grain, notamment le son et le germe. Naturellement plus riche en fibres, en vitamines et en minéraux, elle permet de réaliser des pains à forte valeur nutritionnelle tout en répondant aux attentes croissantes des consommateurs en quête d'une alimentation plus saine.\n\nSpécialement conçue pour la boulangerie artisanale et industrielle, elle offre une excellente aptitude à la panification, une bonne tenue de pâte et une qualité régulière. Elle permet d'obtenir des pains complets à la mie moelleuse, à la croûte dorée et au goût authentique de céréales.\n\nGrâce à sa régularité et à ses performances technologiques, la Farine Complète TESA garantit un excellent rendement et une fabrication fiable, tout en apportant une véritable valeur ajoutée aux produits de boulangerie.\n\nTESA Farine Complète : Plus de fibres, plus de saveur, plus de bien-être.\n\nDisponible en sacs de 50 kg. Vente en gros et en détail.",
+                'image'       => 'products/farine_complete_tesa.jpg',
+                'price'       => null,
+                'category'    => 'boulangerie',
+                'weight'      => '50 kg',
+                'is_featured' => true,
+                'is_active'   => true,
+                'sort_order'  => 6,
+            ],
         ];
 
         foreach ($products as $product) {
