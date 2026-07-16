@@ -14,9 +14,13 @@
 @endsection
 
 @section('content')
-<div class="mb-3">
+<div class="mb-3 d-flex gap-2 flex-wrap">
     <a href="{{ route('employee.commercial.orders.index') }}" class="btn btn-sm btn-outline-secondary">
         <i class="bi bi-arrow-left me-1"></i>Retour
+    </a>
+    <a href="{{ route('employee.commercial.orders.print', $order) }}" target="_blank"
+       class="btn btn-sm btn-outline-primary">
+        <i class="bi bi-printer me-1"></i>Imprimer — {{ $order->status_label }}
     </a>
 </div>
 

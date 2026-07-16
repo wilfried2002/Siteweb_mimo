@@ -39,6 +39,13 @@ class OrderController extends Controller
         return view('admin.orders.index', compact('orders', 'stats'));
     }
 
+    public function print(Order $order)
+    {
+        $order->load('items.product');
+        [$docTitle, $phaseIcon] = $this->docMeta($order);
+        return view('orders.print', compact('order', 'docTitle', 'phaseIcon'));
+    }
+
     public function show(Order $order)
     {
         $order->load('items.product');
@@ -74,5 +81,18 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->route('admin.orders.index')
             ->with('success', 'Commande supprimée.');
+    }
+
+    private function docMeta(Order $order): array
+    {
+        return match ($order->status) {
+            'pending'        => ['Bon de Commande',      '⏳'],
+            'validated'      => ['Bon de Validation',    '✅'],
+            'en_preparation' => ['Bon de Préparation',   '⚙️'],
+            'expediee'       => ['Bon d\'Expédition',    '🚚'],
+            'livree'         => ['Bon de Livraison',     '📦'],
+            'cancelled'      => ['Commande Annulée',     '❌'],
+            default          => ['Document Commande',    '📄'],
+        };
     }
 }

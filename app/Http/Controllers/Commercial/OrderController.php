@@ -35,6 +35,13 @@ class OrderController extends Controller
         return view('commercial.orders.index', compact('orders', 'stats'));
     }
 
+    public function print(Order $order)
+    {
+        $order->load('items.product');
+        [$docTitle, $phaseIcon] = $this->docMeta($order);
+        return view('orders.print', compact('order', 'docTitle', 'phaseIcon'));
+    }
+
     public function show(Order $order)
     {
         $order->load('items.product');
@@ -66,5 +73,18 @@ class OrderController extends Controller
         $request->validate(['notes' => 'nullable|string|max:1000']);
         $order->update(['notes' => $request->notes]);
         return back()->with('success', 'Notes mises à jour.');
+    }
+
+    private function docMeta(Order $order): array
+    {
+        return match ($order->status) {
+            'pending'        => ['Bon de Commande',      '⏳'],
+            'validated'      => ['Bon de Validation',    '✅'],
+            'en_preparation' => ['Bon de Préparation',   '⚙️'],
+            'expediee'       => ['Bon d\'Expédition',    '🚚'],
+            'livree'         => ['Bon de Livraison',     '📦'],
+            'cancelled'      => ['Commande Annulée',     '❌'],
+            default          => ['Document Commande',    '📄'],
+        };
     }
 }

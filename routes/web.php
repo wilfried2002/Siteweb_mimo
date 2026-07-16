@@ -140,6 +140,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         // Commandes admin
         Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders.index');
+        Route::get('/orders/{order}/print', [AdminOrderController::class, 'print'])->name('orders.print');
         Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
         Route::patch('/orders/{order}/status', [AdminOrderController::class, 'updateStatus'])->name('orders.status');
         Route::patch('/orders/{order}/notes', [AdminOrderController::class, 'updateNotes'])->name('orders.notes');
@@ -169,6 +170,7 @@ Route::prefix('espace')->name('employee.')->group(function () {
     // ── Commercial ────────────────────────────────────────
     Route::prefix('commercial')->name('commercial.')->middleware('role:commercial,admin')->group(function () {
         Route::get('/commandes', [CommercialOrderController::class, 'index'])->name('orders.index');
+        Route::get('/commandes/{order}/imprimer', [CommercialOrderController::class, 'print'])->name('orders.print');
         Route::get('/commandes/{order}', [CommercialOrderController::class, 'show'])->name('orders.show');
         Route::post('/commandes/{order}/valider', [CommercialOrderController::class, 'validate'])->name('orders.validate');
         Route::post('/commandes/{order}/annuler', [CommercialOrderController::class, 'reject'])->name('orders.reject');

@@ -133,9 +133,15 @@
             @endif
         </div>
 
-        <a href="{{ route('admin.orders.index') }}" class="btn btn-outline-secondary">
-            <i class="bi bi-arrow-left me-2"></i>Retour à la liste
-        </a>
+        <div class="d-flex gap-2 flex-wrap">
+            <a href="{{ route('admin.orders.index') }}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-2"></i>Retour à la liste
+            </a>
+            <a href="{{ route('admin.orders.print', $order) }}" target="_blank"
+               class="btn btn-outline-primary">
+                <i class="bi bi-printer me-2"></i>Imprimer — {{ $order->status_label }}
+            </a>
+        </div>
     </div>
 
     {{-- ===== COLONNE DROITE — Actions ===== --}}
