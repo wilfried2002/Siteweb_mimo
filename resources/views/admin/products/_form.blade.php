@@ -65,6 +65,7 @@
 
     <div class="col-md-6">
         <div class="form-check form-switch">
+            <input type="hidden" name="is_featured" value="0">
             <input class="form-check-input" type="checkbox" name="is_featured"
                    id="is_featured" value="1"
                    {{ old('is_featured', $product->is_featured ?? false) ? 'checked' : '' }}>
@@ -74,6 +75,7 @@
 
     <div class="col-md-6">
         <div class="form-check form-switch">
+            <input type="hidden" name="is_active" value="0">
             <input class="form-check-input" type="checkbox" name="is_active"
                    id="is_active" value="1"
                    {{ old('is_active', $product->is_active ?? true) ? 'checked' : '' }}>

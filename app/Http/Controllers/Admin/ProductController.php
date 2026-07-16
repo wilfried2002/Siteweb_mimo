@@ -59,7 +59,7 @@ class ProductController extends Controller
         }
 
         $validated['is_featured'] = $request->boolean('is_featured');
-        $validated['is_active']   = $request->boolean('is_active', true);
+        $validated['is_active']   = $request->boolean('is_active');
 
         Product::create($validated);
 
@@ -94,7 +94,7 @@ class ProductController extends Controller
         }
 
         $validated['is_featured'] = $request->boolean('is_featured');
-        $validated['is_active']   = $request->boolean('is_active', true);
+        $validated['is_active']   = $request->boolean('is_active');
 
         $product->update($validated);
 
