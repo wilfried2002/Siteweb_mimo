@@ -183,11 +183,16 @@
 
     {{-- En-tête --}}
     <div class="doc-header">
-        <div>
-            <div class="company-name">MIMOSA FLOUR</div>
-            <div class="company-sub">
-                Minoterie Mimosa — Douala, Cameroun<br>
-                Tél : +237 620 73 19 30 &nbsp;|&nbsp; info@mimosaflour.com
+        <div style="display:flex; align-items:center; gap:1rem;">
+            <img src="{{ asset('assets/images/logo.jpg') }}"
+                 alt="Mimosa Flour"
+                 style="height:72px; width:auto; object-fit:contain;">
+            <div>
+                <div class="company-name">MIMOSA FLOUR</div>
+                <div class="company-sub">
+                    Minoterie Mimosa — Douala, Cameroun<br>
+                    Tél : +237 620 73 19 30 &nbsp;|&nbsp; info@mimosaflour.com
+                </div>
             </div>
         </div>
         <div class="doc-title-box">
